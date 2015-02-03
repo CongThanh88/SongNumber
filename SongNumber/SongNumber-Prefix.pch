@@ -1,0 +1,38 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+#define IS_IPHONE (!IS_IPAD)
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone)
+#define IS_IOS7     [[UIDevice currentDevice].systemVersion floatValue]>=7.0
+#define INCHES_3_5  [UIScreen mainScreen].bounds.size.height == 480
+
+#define DEFAULT_LYRIC_FONT_SIZE     30.0f
+
+#define DEFAULT_LYRIC_FONT                  [UIFont fontWithName:@"Helvetica-Bold" size:DEFAULT_LYRIC_FONT_SIZE]
+#define ONLINE_KARAOKE_FOLDER               @"ONLINE_KARAOKE"
+#define DOWNLOAD_VIDEO_FOLDER               @"download_video_data"
+#define NOTIFICATION_WILL_BACKGROUND        @"Notification_Will_Background"
+#define RECORDING_AUDIO_FOLDER              @"Audio_recording"
+#define BACKGROUND_IMAGES_FOLDER            @"MYPHOTO_BACKGROUND"
+#define OFFLINE_KARAOKE_FOLDER              @"OFFLINE_KARAOKE"
+#define TYPE_ALL_VALUE_STRING      @"Tất cả"
+#define KIND_ALL_VALUE             0 //Tat ca bai hat
+#define CLIENT_ID_KEY               @"CLIENT_ID"
+#define SMS_FORMAT                  @"SMSKS VITEK %@"
+#define rgbColor(r,g,b,a)   [UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:a]
+#define colorWithHexValue(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define SONG_INFO_BLUE_COLOR        rgbValue(0,171.0, 255.0,1.0)
+#define MENU_TEXT_COLOR             rgbColor(59.0, 90.0, 164.0,1)
+#define MENU_BOTTOM_BG_COLOR      rgbColor(59.0, 90.0, 164.0, 1)
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

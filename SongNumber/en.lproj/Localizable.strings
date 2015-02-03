@@ -1,0 +1,205 @@
+/*
+ Localizable.strings
+ IKaraoke
+ 
+ Created by Apple on 7/22/14.
+ Copyright (c) 2014 com.softfront. All rights reserved.
+ */
+"app_name"                 =            "Vitek VTB Karaoke";
+"action_settings"          =            "Settings";
+"sing_karaoke"             =            "Sing karaoke";
+"song_list"                =            "Song list";
+"favorite"                 =            "Favorite";
+"settings"                 =            "Settings";
+"help"                     =            "Help";
+"share"                    =            "Share";
+"rating"                   =            "Rating";
+"search"                   =            "Search";
+"action_error"             =            "Some errors were occurred. Please try again later.";
+"play_error"               =            "Some errors were occurred, can not play song";
+"no_songs"                 =            "There is no song available.";
+"loading"                  =            "Loading...";
+"recorded_songs"           =            "Recorded songs";
+"listen"                   =            "Listen";
+"delete"                   =            "Delete";
+"yes"                      =            "OK";
+"no"                       =            "Cancel";
+"on"                       =            "On";
+"off"                      =            "Off";
+"vietnamese"               =            "Vietnamese";
+"english"                  =            "English";
+"chinese"                  =            "Chinese";
+"exit_confirm"             =            "Are you sure you want to exit?";
+"connection_error"         =            "Please check the internet connection.";
+"all"                      =            "All";
+"require_permission"       =            "Local karaoke feature is only for VITEK devices.";
+"get_lyric_error"          =            "Lyric could not be found.";
+"download_completed"       =            "Download completed.";
+"downloaded"               =            "Downloaded";
+"not_downloaded"           =            "Not downloaded";
+"no_video_backgrounds"     =            "There is no video available.";
+"download"                 =            "Download";
+"active_video"             =            "Active video background";
+"deactive_video"           =            "Deactive video background";
+"sdcard"                   =            "Offline karaoke";
+"cancel"                   =            "Cancel";
+"font"                     =            "Font";
+"photo"                    =            "Photo";
+"video"                    =            "Video";
+"my_photo"                 =            "My photo";
+"set_video_as_default"     =            "Set this video as default?";
+"download_error"           =            "Can not download this video.";
+"applause"                 =            "Applause";
+"remove_favorite"          =            "Remove";
+"next_song"                =            "Next song";
+"playing"                  =            "Playing";
+"downloading"              =            "Downloading";
+//<!-- KN add -->
+"songlist"                 =            "Song list";
+"bookingkist"              =            "Selected songs";
+"key_res"                  =            "Res";
+"key_1st_res"              =            "1st Res";
+"key_delete"               =            "Delete";
+"key_cancel"               =            "Cancel";
+"res_en_vi"                =            "#res##chọn#";
+"res_1st_en_vi"            =            "#1st res##ưu tiên#";
+"delete_en_vi"             =            "#delete##xóa#";
+"cancel_en_vi"             =            "#cancel##hủy#";
+"favorite_en_vi"           =            "#favorite##yêu thích#";
+"back_to_kok"              =            "Back to my karaoke";
+//<!-- End -->
+"menu"                     =            "Menu";
+"pay"                      =            "Submit";
+"begin_sing"               =            "Begin sing";
+"account_status"           =            "Expiry date: ";
+"sms_payment_guide_compose"       =   "Compose message:";
+"sms_payment_guide_cost"           = "(15.000 VND/1 SMS/3 usage days)";
+"send"                      = "send";
+"payment1"                 =            "1. Payment using SMS";
+"payment2"                 =            "2. Payment using mobile prepaid card";
+"card_number"              =            "Card number";
+"serial_number"            =            "Serial number";
+"please_input_card_number"       =            "Please input card number.";
+"please_input_serial_number"     =            "Please input serial number.";
+"device_is_not_active"           =            "Device is not active.";
+"expired"                        =            "Expired";
+"check"                          =            "Check";
+"mobile_card_payment_error"      =            "Payment info is invalid.";
+"close"                          =            "Close";
+"payment_require"                  =            "Your accout is expired, please pay to sing the paid songs.";
+"please_wait"                      =            "Please wait...";
+"delete_all"                       =            "Delete all";
+"delete_all_record_songs_confirm"  =            "Are you sure you want to delete all recorded songs?";
+"share_facebook"                   =            "Share";
+"feedback"                         =            "Feedback";
+"share_width"                      =            "Share with";
+"send"                             =            "Send";
+"review_title_hint"                =            "Title";
+"review_content_hint"              =            "Content";
+"please_enter_title"               =            "Please enter title.";
+"please_enter_content"             =            "Please enter content.";
+"your_name"                        =            "Your name";
+"phone_number"                     =            "Phone number";
+"email"                            =            "Email";
+"feedback_success"                 =            "Your feedback has been sent.";
+"feedback_error"                   =            "Some errors were occurred when sending your feedback.";
+"please_enter_your_name"           =            "Please enter your name.";
+"required_phone_email"             =            "Please enter your phone number or email.";
+"required_internet_for_online_song"       =            "Please turn on your internet connection to sing online songs.";
+"my_photo"                         =            "My photo";
+
+//<!-- KARAOKE MENU -->
+"karaoke_menu_selected_songs"      =            "Song queue";
+"karaoke_menu_demo_karaoke"        =            "Demo karaoke";
+"karaoke_menu_free_songs"          =            "Free songs";
+"karaoke_menu_all_songs"           =            "All songs";
+"karaoke_menu_favorite_songs"       =            "Favorite songs";
+"karaoke_menu_recorded_songs"       =            "Recorded songs";
+"karaoke_menu_local_karaoke"       =            "USB/SDCARD/HDD karaoke";
+//<!-- END KARAOKE MENU -->
+
+
+//<!-- SETTINGS -->
+"settings_language"                =            "Language";
+"settings_video_full_hd"           =            "Video full HD";
+"settings_video_backgound"         =            "Video background";
+"settings_karaoke_backgound"       =            "Karaoke background";
+"settings_photo_backgound"         =            "Photo background";
+"settings_scoring"                 =            "Scoring";
+"settings_singer_voice"            =            "Singer voice";
+"settings_visualization"           =            "Visualization";
+"settings_recording"               =            "Recording";
+"settings_welcome_message"         =            "Welcome message";
+"settings_karaoke_text_color"       =            "Karaoke text color";
+"settings_karaoke_text_size"       =            "Karaoke text size";
+"settings_karaoke_text"            =            "Karaoke text";
+"settings_reset_to_default"       =            "Reset to default";
+"settings_about_device"            =            "About device";
+"settings_payment_info"            =            "Payment information";
+"settings_text_color"              =            "Text color";
+"settings_text_run_color"          =            "Filled text color";
+"settings_text_man_color"          =            "Man text color";
+"settings_text_woman_color"       =            "Woman text color";
+"settings_reset_to_default_confirm"       =            "Are you sure you want to reset all settings?";
+"setting_export_file"              =           "Export file";
+"ios_version"                      =            "iOS version";
+"manufacturer"                     =            "Manufacturer";
+"model_number"                     =            "Model number";
+"cpu_arch"                         =            "CPU architecture";
+"build_version"                    =            "Build version";
+"imei_imsi"                        =            "IMEI/IMSI";
+"ios_id"                           =            "iOS ID";
+"wifi_mac_address"                 =            "Wi-Fi MAC address";
+"device_id"                        =            "Device ID";
+"karaoke_text_size_color_line1"    =            "Em ơi có bao nhiêu";
+"karaoke_text_size_color_line2"    =            "60 năm cuộc đời";
+//<!-- END SETTINGS -->
+
+
+//<!-- KARAOKE -->
+"sing_now"                         =            "Sing now";
+"add_song_to_queue"                =            "Add song to queue";
+"view_lyric"                       =            "View lyric";
+"add_song_to_favorite"             =            "Add song to favorite";
+"remove_selected_song"             =            "Remove from song queue";
+"remove_favorite_song"             =            "Remove from favorite";
+"karaoke_score"                    =            "Karaoke score";
+"score_90_100"                     =            "You are a singer";
+"score_80_89"                      =            "You got it";
+"score_70_79"                      =            "Good job";
+"filter_all"                       =            "All";
+"filter_free"                      =            "Free";
+"filter_favorite"                  =            "Favorite";
+"filter_new"                       =            "New";
+//
+"filter_group"                     =            "Group";
+"filter_category"                  =            "Category";
+"add_favorite_success"             =            "Added song to favorite.";
+"remove_favorite_success"          =            "Removed from favorite.";
+"select_song_success"              =            "Added song to queue.";
+"singer"                           =            "Singer:";
+"music_by"                         =            "Music by:";
+"lyric_by"                         =            "Lyric by:";
+"song_lyric"                       =            "Lyric";
+//<!-- KN modify -->
+"selected_song_upper"              =            "Selected songs";
+"please_select_song"               =            "Please select song";
+//<!-- End -->
+"song_registered"                  =            "The song is registerd.";
+"song_number"                      =            "Song number";
+"singer_voice"                     =            "Singer voice";
+"record"                           =            "Record";
+"select_song"                      =            "Select song";
+"favorite_songs"                   =            "Favorite songs";
+"song_lyric"                       =            "Lyric:";
+"back"                             =            "Back";
+//share content
+"shareContent"                     =       "Download iKaraoke at: http:appstore.com/ikaraoke to funy.";
+//
+"input_invalid"                     =       "Invalid value. Please re-enter.";
+
+//export file
+"mp3&midi"                          =       "MP3&MIDI";
+"mtv"                               =       "MTV";
+"export_song_to_excel"              =       "Export list of songs to excel";
+"mail_content_attach_file_excel"    =       "File list of sóng of IKaraoke app";

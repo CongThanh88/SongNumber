@@ -1,0 +1,206 @@
+
+/*
+ Localizable.strings
+ IKaraoke
+ 
+ Created by Apple on 7/22/14.
+ Copyright (c) 2014 com.softfront. All rights reserved.
+ */
+"app_name"       =   "Vitek VTB Karaoke";
+"action_settings"       =   "Settings";
+"sing_karaoke"       =   "Hát karaoke";
+"song_list"       =   "Bài hát";
+"favorite"       =   "Yêu thích";
+"settings"       =   "Cài đặt";
+"help"       =   "Hướng dẫn";
+"share"       =   "Chia sẻ";
+"rating"       =   "Đánh giá";
+"search"       =   "Tra cứu";
+"action_error"       =   "Có lỗi xảy ra. Vui lòng thử lại sau.";
+"play_error"       =   "Có lỗi xảy ra, không thể mở ca khúc";
+"no_songs"       =   "Chưa có bài hát nào.";
+"loading"       =   "Đang tải...";
+"recorded_songs"       =   "Bài hát đã thu âm";
+"listen"       =   "Nghe";
+"delete"       =   "Xóa";
+"yes"       =   "Đồng ý";
+"no"       =   "Không";
+"on"       =   "Bật";
+"off"       =   "Tắt";
+"vietnamese"       =   "Tiếng Việt";
+"english"       =   "Tiếng Anh";
+"chinese"       =   "Tiếng Hoa";
+"exit_confirm"       =   "Thoát ứng dụng?";
+"connection_error"       =   "Vui lòng kiểm tra lại kết nối mạng.";
+"all"       =   "Tất cả";
+"require_permission"       =   "Chức năng offline karaoke chỉ dành cho thiết bị của VITEK.";
+"get_lyric_error"       =   "Không lấy được lời bài hát.";
+"download_completed"       =   "Tải thành công.";
+"downloaded"       =   "Đã tải về";
+"not_downloaded"       =   "Chưa tải về";
+"no_video_backgrounds"       =   "Chưa có video nền nào.";
+"download"       =   "Tải về";
+"active_video"       =   "Chọn làm video nền";
+"deactive_video"       =   "Bỏ chọn làm video nền";
+"sdcard"       =   "Offline karaoke";
+"cancel"       =   "Hủy";
+"font"       =   "Kiểu chữ";
+"photo"       =   "Ảnh";
+"video"       =   "Video";
+"my_photo"     =  "Ảnh của tôi";
+"set_video_as_default"       =   "Chọn làm video mặc định?";
+"download_error"       =   "Không tải được video.";
+"applause"       =   "Vỗ tay";
+"remove_favorite"       =   "Bỏ yêu thích";
+"next_song"       =   "Bài kế tiếp";
+"playing"       =   "Đang phát";
+"downloading"       =   "Đang tải";
+//<!-- KN add -->
+"songlist"       =   "Bài hát";
+"bookingkist"       =   "Bài hát chờ";
+"key_res"       =   "Chọn";
+"key_1st_res"       =   "Ưu tiên";
+"key_delete"       =   "Xóa";
+"key_cancel"       =   "Hủy";
+"res_en_vi"       =   "#res##chọn#";
+"res_1st_en_vi"       =   "#1st res##ưu tiên#";
+"delete_en_vi"       =   "#delete##xóa#";
+"cancel_en_vi"       =   "#cancel##hủy#";
+"favorite_en_vi"       =   "#favorite##yêu thích#";
+"back_to_kok"       =   "Trở về màn hình karaoke";
+//<!-- End -->
+"menu"       =   "Menu";
+"pay"       =   "Thanh toán";
+"begin_sing"       =   "Bắt đầu hát";
+"account_status"       =   "Ngày hết hạn: ";
+"sms_payment_guide_compose"       =   "Soạn tin: ";
+"sms_payment_guide_cost"           = "(15.000 VND/1 SMS/3 ngày sử dụng)";
+"send"                  = "gửi";
+"payment1"       =   "1. Thanh toán bằng SMS";
+"payment2"       =   "2. Thanh toán bằng thẻ cào điện thoại";
+"card_number"       =   "Mã thẻ";
+"serial_number"       =   "Số seri";
+"please_input_card_number"       =   "Bạn chưa nhập mã số thẻ.";
+"please_input_serial_number"       =   "Bạn chưa nhập số sêri.";
+"device_is_not_active"       =   "Thiết bị chưa kích hoạt.";
+"expired"       =   "Hết hạn";
+"check"       =   "Kiểm tra";
+"mobile_card_payment_error"       =   "Thông tin thanh toán không đúng.";
+"close"       =   "Đóng";
+"payment_require"       =   "Tài khoản hết hạn, vui lòng thanh toán để hát những bài tính phí.";
+"please_wait"       =   "Vui lòng đợi...";
+"delete_all"       =   "Xóa tất cả";
+"delete_all_record_songs_confirm"       =   "Xóa tất cả bài hát đã ghi âm?";
+"share_facebook"       =   "Chia sẻ";
+"feedback"       =   "Đánh giá - Góp ý";
+"share_width"       =   "Chia sẻ qua";
+"send"       =   "Gửi";
+"review_title_hint"       =   "Tiêu đề";
+"review_content_hint"       =   "Nội dung";
+"please_enter_title"       =   "Bạn chưa nhập tiêu đề.";
+"please_enter_content"       =   "Bạn chưa nhập nội dung.";
+"your_name"       =   "Tên của bạn";
+"phone_number"       =   "Số ĐT liên lạc";
+"email"       =   "Email";
+"feedback_success"       =   "Phản hồi của bạn đã được gửi đi.";
+"feedback_error"       =   "Có lỗi xảy ra vui lòng thử lại sau.";
+"please_enter_your_name"       =   "Bạn chưa nhập tên.";
+"required_phone_email"       =   "Vui lòng nhập số điện thoại hoặc email.";
+"required_internet_for_online_song"       =   "Vui lòng mở kết nối internet để hát bài hát online.";
+"my_photo"       =   "Ảnh của tôi";
+
+//<!-- KARAOKE MENU -->
+"karaoke_menu_selected_songs"       =   "Danh sách chờ";
+"karaoke_menu_demo_karaoke"       =   "Demo karaoke";
+"karaoke_menu_free_songs"       =   "Bài hát miễn phí";
+"karaoke_menu_all_songs"       =   "Tất cả bài hát";
+"karaoke_menu_favorite_songs"       =   "Bài hát yêu thích";
+"karaoke_menu_recorded_songs"       =   "Bài hát đã ghi âm";
+"karaoke_menu_local_karaoke"       =   "USB/SDCARD/HDD karaoke";
+//<!-- END KARAOKE MENU -->
+
+
+//<!-- SETTINGS -->
+"settings_language"       =   "Ngôn ngữ";
+"settings_video_full_hd"       =   "Video full HD";
+"settings_video_backgound"       =   "Video nền";
+"settings_karaoke_backgound"       =   "Nền karaoke";
+"settings_photo_backgound"       =   "Ảnh nền";
+"settings_scoring"       =   "Chấm điểm";
+"settings_singer_voice"       =   "Giọng ca sĩ";
+"settings_visualization"       =   "Hiển thị nhịp điệu";
+"settings_recording"       =   "Thu âm";
+"settings_welcome_message"       =   "Lời chào";
+"settings_karaoke_text_color"       =   "Màu chữ karaoke";
+"settings_karaoke_text_size"       =   "Kích thước chữ karaoke";
+"settings_karaoke_text"       =   "Chữ karaoke";
+"settings_reset_to_default"       =   "Trở về mặc định";
+"settings_about_device"       =   "Thông tin thiết bị";
+"settings_payment_info"       =   "Thanh toán";
+"settings_text_color"       =   "Màu chữ";
+"settings_text_run_color"       =   "Màu chữ tô";
+"settings_text_man_color"       =   "Màu chữ nam";
+"settings_text_woman_color"       =   "Màu chữ nữ";
+"settings_reset_to_default_confirm"       =   "Bạn có muốn trở lại chế độ cài đặt mặc định?";
+"setting_export_file"           =   "Xuất file";
+"ios_version"       =   "Phiên bản iOS";
+"manufacturer"       =   "Nhà sản xuất";
+"model_number"       =   "Dòng máy";
+"cpu_arch"       =   "Kiến trúc CPU";
+"build_version"       =   "Phiên bản ứng dụng";
+"imei_imsi"       =   "IMEI/IMSI";
+"ios_id"       =   "Mã iOS";
+"wifi_mac_address"       =   "Địa chỉ MAC của Wi-Fi";
+"device_id"       =   "Mã thiết bị";
+"karaoke_text_size_color_line1"       =   "Em ơi có bao nhiêu";
+"karaoke_text_size_color_line2"       =   "60 năm cuộc đời";
+//<!-- END SETTINGS -->
+
+
+//<!-- KARAOKE -->
+"sing_now"       =   "Hát ngay";
+"add_song_to_queue"       =   "Thêm vào danh sách chờ";
+"view_lyric"       =   "Xem lời bài hát";
+"add_song_to_favorite"       =   "Thêm vào bài hát yêu thích";
+"remove_selected_song"       =   "Xóa khỏi danh sách chờ";
+"remove_favorite_song"       =   "Xóa khỏi danh sách yêu thích";
+"karaoke_score"       =   "Chấm điểm";
+"score_90_100"       =   "Bạn hát như ca sĩ";
+"score_80_89"       =   "Bạn hát rất hay";
+"score_70_79"       =   "Bạn sẽ hát hay";
+"filter_all"       =   "Tất cả";
+"filter_free"       =   "Miễn phí";
+"filter_favorite"       =   "Yêu thích";
+"filter_new"       =   "Bài hát mới";
+//
+"filter_group"                     =            "Nhóm";
+"filter_category"                  =            "Thể loại";
+"add_favorite_success"       =   "Đã thêm vào danh sách yêu thích.";
+"remove_favorite_success"       =   "Đã bỏ yêu thích.";
+"select_song_success"       =   "Đã thêm vào danh sách chờ.";
+"singer"       =   "Ca sĩ:";
+"music_by"       =   "Nhạc:";
+"lyric_by"       =   "Lời:";
+"song_lyric"       =   "Lời bài hát";
+//<!-- KN modify -->
+"selected_song_upper"       =   "Bài hát chờ";
+"please_select_song"       =   "Vui lòng chọn bài hát";
+"song_registered"       =   "Đã lưu bài hát.";
+//<!-- End -->
+"song_number"       =   "Mã số bài hát";
+"singer_voice"       =   "Giọng ca sĩ";
+"record"       =   "Thu âm";
+"select_song"       =   "Chọn bài";
+"favorite_songs"       =   "Bài hát yêu thích";
+"song_lyric"       =   "Lời bài hát:";
+"back"              =   "Quay lại";
+//share content
+"shareContent"          =       "Tải iKaraoke tại: http:appstore.com/ikaraoke để trải nghiệm nhiều niềm vui.";
+//
+"input_invalid"         =       "Giá trị không hợp lệ. Vui lòng nhập lại.";
+
+//export file
+"mp3&midi"                          =       "MP3&MIDI";
+"mtv"                               =       "MTV";
+"export_song_to_excel"              =       "Xuất danh sách bài hát ra excel";
+"mail_content_attach_file_excel"    =       "File danh sách bài hát của ứng dụng IKaraoke";

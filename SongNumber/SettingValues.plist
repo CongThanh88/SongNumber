@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NgonNgu</key>
+	<dict>
+		<key>order</key>
+		<integer>0</integer>
+		<key>icon</key>
+		<string>ic_settings_language.png</string>
+		<key>value</key>
+		<array>
+			<dict>
+				<key>value</key>
+				<string>all</string>
+				<key>name</key>
+				<string>Tất cả</string>
+			</dict>
+			<dict>
+				<key>value</key>
+				<string>vi</string>
+				<key>name</key>
+				<string>vietnamese</string>
+			</dict>
+			<dict>
+				<key>value</key>
+				<string>en</string>
+				<key>name</key>
+				<string>english</string>
+			</dict>
+			<dict>
+				<key>value</key>
+				<string>zh-Hant</string>
+				<key>name</key>
+				<string>chinese</string>
+			</dict>
+		</array>
+		<key>name</key>
+		<string>settings_language</string>
+	</dict>
+</dict>
+</plist>

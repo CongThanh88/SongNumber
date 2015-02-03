@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ListSortType</key>
+	<array>
+		<dict>
+			<key>value</key>
+			<string>0</string>
+			<key>name</key>
+			<string>Tất cả</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>1</string>
+			<key>name</key>
+			<string>Mã số</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>2</string>
+			<key>name</key>
+			<string>Tên bài hát</string>
+		</dict>
+	</array>
+	<key>SongQueueAction</key>
+	<array>
+		<dict>
+			<key>value</key>
+			<string>None</string>
+			<key>name</key>
+			<string>None</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>Sort</string>
+			<key>name</key>
+			<string>Sort</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>Edit</string>
+			<key>name</key>
+			<string>Edit</string>
+		</dict>
+	</array>
+	<key>ListKindOfSongs</key>
+	<array>
+		<dict>
+			<key>value</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>Tất cả</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>1</string>
+			<key>name</key>
+			<string>Bài hát miễn phí</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>2</string>
+			<key>name</key>
+			<string>Bài hát mới</string>
+		</dict>
+	</array>
+	<key>ListTypeSong</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Tất cả</string>
+			<key>value</key>
+			<string>Tất cả</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Trẻ Trung</string>
+			<key>value</key>
+			<string>Trẻ Trung</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Thiếu Nhi</string>
+			<key>value</key>
+			<string>Thiếu Nhi</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Tiền Chiến</string>
+			<key>value</key>
+			<string>Tiền Chiến</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Dân Ca</string>
+			<key>value</key>
+			<string>Dân Ca</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Tình Ca</string>
+			<key>value</key>
+			<string>Tình Ca</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Âm Hưởng Dân Ca</string>
+			<key>value</key>
+			<string>Âm Hưởng Dân Ca</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Truyền Thống</string>
+			<key>value</key>
+			<string>Truyền Thống</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Tân Cổ Giao Duyên</string>
+			<key>value</key>
+			<string>Tân Cổ Giao Duyên</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bolero</string>
+			<key>value</key>
+			<string>Bolero</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Trinh Công Sơn</string>
+			<key>value</key>
+			<string>Trinh Công Sơn</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nhạc Hoa Lời Việt</string>
+			<key>value</key>
+			<string>Nhạc Hoa Lời Việt</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nhạc Anh Lời Việt</string>
+			<key>value</key>
+			<string>Nhạc Anh Lời Việt</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nhạc Pháp Lời Việt</string>
+			<key>value</key>
+			<string>Nhạc Pháp Lời Việt</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>VOCAL</string>
+			<key>value</key>
+			<string>VOCAL</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>REMIX2</string>
+			<key>value</key>
+			<string>REMIX2</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>MTV</string>
+			<key>value</key>
+			<string>MTV</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Thể Loại Khác</string>
+			<key>value</key>
+			<string>Thể Loại Khác</string>
+		</dict>
+	</array>
+</dict>
+</plist>
