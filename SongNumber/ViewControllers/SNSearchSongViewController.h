@@ -11,6 +11,10 @@
 #import "SNSelectBoxView.h"
 #import "SNToggleButton.h"
 #import "KSBasePopupView.h"
+#import "SNScanQRCodeViewController.h"
+#import <Foundation/NSStream.h>
+
+#define PORT       2468
 
 typedef enum : NSUInteger {
     REMOTE_PING = 0x00,
@@ -33,7 +37,7 @@ typedef enum : NSUInteger {
     REMOTE_VOLUME_DOWN = 0x11
 } REMOTE;
 
-@interface SNSearchSongViewController : UIViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, SelectBoxDelegate, PopupViewDelegate, SNSongTableViewCellDelegate>
+@interface SNSearchSongViewController : UIViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, SelectBoxDelegate, PopupViewDelegate, SNSongTableViewCellDelegate, NSStreamDelegate, ScanQRCodeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *boundSearchView;
 @property (weak, nonatomic) IBOutlet UITextField *txtSearchField;

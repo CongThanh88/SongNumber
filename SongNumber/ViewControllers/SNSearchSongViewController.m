@@ -14,7 +14,6 @@
 #import "SNSettingManager.h"
 #import "SNSongTableViewCell.h"
 #import "HTLyricsDetailViewController.h"
-#import "SNScanQRCodeViewController.h"
 
 
 @interface SNSearchSongViewController ()
@@ -30,6 +29,8 @@
     SNSettingManager *setting;
     KSBasePopupView *popupView;
     SNScanQRCodeViewController *scanQRVC;
+    NSInputStream *inputStream;
+    NSOutputStream *outputStream;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -58,6 +59,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self sendRemoteControl:REMOTE_RES songNumber:@"1001"];
+    
     _boundSearchView.layer.cornerRadius = 5;
     _boundSearchView.layer.borderColor = [UIColor grayColor].CGColor;
     _boundSearchView.layer.borderWidth = 0.5;
@@ -484,5 +487,91 @@
     CGRect tableFrame = _tableView.frame;
     tableFrame.size.height = [UIScreen mainScreen].bounds.size.height - 44- tableFrame.origin.y - 24;
     _tableView.frame = tableFrame;
+}
+
+//////// socket /////////////
+
+- (void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port {
+    CFReadStreamRef readStream;
+    CFWriteStreamRef writeStream;
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)(host), port, &readStream, &writeStream);
+    inputStream = (__bridge NSInputStream *)readStream;
+    outputStream = (__bridge NSOutputStream *)writeStream;
+    [inputStream setDelegate:self];
+    [outputStream setDelegate:self];
+    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [inputStream open];
+    [outputStream open];
+}
+
+-(void)sendRemoteControl:(REMOTE)remote songNumber:(NSString*)songNumber
+{
+    NSInteger number = [songNumber integerValue];
+    NSMutableData *remoteData = [NSMutableData dataWithBytes:&remote length:sizeof(remote)];
+    if (![NSString isStringEmpty:songNumber]) {
+        [remoteData appendData:[NSData dataWithBytes:&number length:sizeof(number)]];
+    }
+    
+    [self sendData:remoteData];
+}
+
+-(void)sendData:(NSData*)data
+{
+    if (data && outputStream) {
+        [outputStream write:[data bytes] maxLength:[data length]];
+    }
+}
+
+#pragma mark - NSStreamDelegate
+- (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
+    
+	switch (streamEvent) {
+            
+		case NSStreamEventOpenCompleted:
+			NSLog(@"Stream opened");
+			break;
+            
+		case NSStreamEventHasBytesAvailable:
+            if (theStream == inputStream) {
+                
+                uint8_t buffer[1024];
+                int len;
+                
+                while ([inputStream hasBytesAvailable]) {
+                    len = [inputStream read:buffer maxLength:sizeof(buffer)];
+                    if (len > 0) {
+                        
+                        NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
+                        
+                        if (nil != output) {
+                            NSLog(@"server said: %@", output);
+                        }
+                    }
+                }
+            }
+			break;
+            
+		case NSStreamEventErrorOccurred:
+			NSLog(@"Can not connect to the host!");
+			break;
+            
+		case NSStreamEventEndEncountered:
+            [theStream close];
+            [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+			break;
+            
+		default:
+			NSLog(@"Unknown event");
+	}
+    
+}
+
+#pragma mark - ScanQRCodeViewControllerDelegate
+-(void)didScanQRCodeWithValue:(NSString *)stringValue
+{
+    if (![NSString isStringEmpty:stringValue]) {
+        [self initNetworkCommunicationToHost:stringValue port:PORT];
+    }
 }
 @end
