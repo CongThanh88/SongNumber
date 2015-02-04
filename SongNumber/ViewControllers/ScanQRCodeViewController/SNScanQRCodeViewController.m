@@ -134,8 +134,8 @@
 }
 
 - (IBAction)btnOk:(id)sender {
-    if (_lblScanValue.text && _delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {
-        [_delegate didScanQRCodeWithValue:_lblScanValue.text];
+    if (scanValue && _delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {
+        [_delegate didScanQRCodeWithValue:scanValue];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];

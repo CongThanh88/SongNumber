@@ -14,6 +14,9 @@
 #import "SNSettingManager.h"
 #import "SNSongTableViewCell.h"
 #import "HTLyricsDetailViewController.h"
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
 
 
 @interface SNSearchSongViewController ()
@@ -59,7 +62,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self sendRemoteControl:REMOTE_RES songNumber:@"1001"];
     
     _boundSearchView.layer.cornerRadius = 5;
     _boundSearchView.layer.borderColor = [UIColor grayColor].CGColor;
@@ -445,6 +447,7 @@
 
 - (IBAction)btnScanCode:(id)sender {
     scanQRVC = [[SNScanQRCodeViewController alloc]initWithNibName:@"SNScanQRCodeViewController" bundle:nil];
+    scanQRVC.delegate = self;
     [self presentViewController:scanQRVC animated:YES completion:nil];
 }
 
@@ -492,6 +495,7 @@
 //////// socket /////////////
 
 - (void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port {
+    
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)(host), port, &readStream, &writeStream);
@@ -504,6 +508,7 @@
     [inputStream open];
     [outputStream open];
 }
+
 
 -(void)sendRemoteControl:(REMOTE)remote songNumber:(NSString*)songNumber
 {
@@ -525,7 +530,6 @@
 
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
-    
 	switch (streamEvent) {
             
 		case NSStreamEventOpenCompleted:
@@ -553,7 +557,7 @@
 			break;
             
 		case NSStreamEventErrorOccurred:
-			NSLog(@"Can not connect to the host!");
+			NSLog(@"Can not connect to the host! error: %@",[theStream streamError]);
 			break;
             
 		case NSStreamEventEndEncountered:
@@ -571,7 +575,7 @@
 -(void)didScanQRCodeWithValue:(NSString *)stringValue
 {
     if (![NSString isStringEmpty:stringValue]) {
-        [self initNetworkCommunicationToHost:stringValue port:PORT];
+        [self initNetworkCommunicationToHost:stringValue port:2468];
     }
 }
 @end
