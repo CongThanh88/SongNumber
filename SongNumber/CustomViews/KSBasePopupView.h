@@ -13,6 +13,7 @@
 
 -(void)viewLyricSong:(SNSongModel*)song;
 -(void)addToFavorite:(SNSongModel*)song;
+-(void)addToQueue:(SNSongModel*)song;
 
 @end
 
@@ -25,6 +26,7 @@
 
 - (IBAction)btnViewLyric:(id)sender;
 - (IBAction)btnAddToFavorite:(id)sender;
+- (IBAction)btnAddToQueue:(id)sender;
 
 - (void)showInView:(UIView *)aView animated:(BOOL)animated completeBlock:(void(^)(void))closePopupBlock;
 -(void)closePopup;

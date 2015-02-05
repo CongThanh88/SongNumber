@@ -70,7 +70,7 @@
 {
     if (response) {
         NSArray *arrayFields = [response componentsSeparatedByString:@"\t"];
-        if (arrayFields && arrayFields.count >0) {
+        if (arrayFields && arrayFields.count >= 13 ) {
             SNSongModel *newSong = [[SNSongModel alloc]init];
             newSong.number = [arrayFields objectAtIndex:0];
             newSong.title = [arrayFields objectAtIndex:1];
@@ -96,7 +96,7 @@
     if (listString && listString.count>0) {
         NSArray *listSong = [[NSArray alloc]init];
         for (NSString *songResponse in listString) {
-            if ( songResponse) {
+            if (songResponse) {
                 SNSongModel *newSong = [SNSongModel parseSongFromResponseString:songResponse];
                 if (newSong) {
                     listSong = [listSong arrayByAddingObject:newSong];

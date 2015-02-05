@@ -7,7 +7,8 @@
 //
 
 #import "SNAppDelegate.h"
-#import "SNSearchSongViewController.h"
+//#import "SNSearchSongViewController.h"
+#import "SNScanQRCodeViewController.h"
 
 @implementation SNAppDelegate
 
@@ -18,8 +19,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    SNSearchSongViewController *searchVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
-    self.window.rootViewController = searchVC;
+//    SNSearchSongViewController *searchVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
+
+    SNScanQRCodeViewController *scanQRVC = [[SNScanQRCodeViewController alloc]initWithNibName:@"SNScanQRCodeViewController" bundle:nil];
+    self.window.rootViewController = scanQRVC;
     return YES;
 }
 

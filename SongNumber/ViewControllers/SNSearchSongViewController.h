@@ -12,6 +12,7 @@
 #import "SNToggleButton.h"
 #import "KSBasePopupView.h"
 #import "SNScanQRCodeViewController.h"
+#import "MBProgressHUD.h"
 #import <Foundation/NSStream.h>
 
 #define PORT       2468
@@ -49,8 +50,9 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet SNToggleButton *btnFavorite;
 @property (weak, nonatomic) IBOutlet SNToggleButton *btnNew;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property (nonatomic, strong) MBProgressHUD *loadingView;
+@property (nonatomic, strong) MBProgressHUD *loadingView;
 @property (strong, nonatomic) UILabel *notifyView;
+
 
 - (IBAction)btnDeleteText:(id)sender;
 - (IBAction)btnSort:(id)sender;
@@ -62,5 +64,5 @@ typedef enum : NSUInteger {
 - (IBAction)btnNew:(id)sender;
 - (IBAction)btnScanCode:(id)sender;
 
-
+- (void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port;
 @end

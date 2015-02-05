@@ -14,9 +14,12 @@
 #import "SNSettingManager.h"
 #import "SNSongTableViewCell.h"
 #import "HTLyricsDetailViewController.h"
+#import "SNRemoteSongsManager.h"
+#import "SNStreamUtil.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
+
 
 
 @interface SNSearchSongViewController ()
@@ -34,10 +37,13 @@
     SNScanQRCodeViewController *scanQRVC;
     NSInputStream *inputStream;
     NSOutputStream *outputStream;
-    BOOL isFirstReceived;
-    int fileLenght;
-    int receivedBytes;
-    NSString *receivedString;
+
+    BOOL isGetList;
+    NSMutableData* mDataRead;
+
+    // Read 4 bytes
+    uint8_t mBufferFirstPackage[4];
+    NSUInteger mCurrentRead;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -74,7 +80,7 @@
     if (IS_IPAD) {
         _tableView.allowsSelection = NO;
     }
-    listSongsFull = [[HTDatabaseHelper sharedInstance] querySongs:@"Select * from song"];
+    listSongsFull = [SNRemoteSongsManager sharedInstance].listSong;//[[HTDatabaseHelper sharedInstance] querySongs:@"Select * from song"];
     listSongs = listSongsFull;
     _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     if (IS_IOS7) {
@@ -100,12 +106,11 @@
     _notifyView.layer.backgroundColor = [[UIColor colorWithRed:196/255 green:196/255 blue:196/255 alpha:0.75] CGColor];
     _notifyView.alpha = 0;
     [self.view addSubview:_notifyView];
+    
 }
 
 -(void)setupView
 {
-    
-    
     CGRect searchFrame = _txtSearchField.frame;
     searchFrame.size.height = 26;
     _txtSearchField.frame = searchFrame;
@@ -144,6 +149,7 @@
     [_btnSort setListItem:listSortType];
     [_btnSort setItemSelected:[listSortType objectAtIndex:0]];
 }
+
 
 #pragma mark - UITextFieldDelegate
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -295,23 +301,21 @@
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self sendRemoteControl:REMOTE_SONG_LIST songNumber:nil];
+    if (IS_IPAD) {
+        return;
+    }
+    if (!popupView) {
+        popupView = [[KSBasePopupView alloc]initWithNibName:@"KSBasePopupView" bundle:nil];
+        popupView.delegate = self;
+    }
     
-//    if (IS_IPAD) {
-//        return;
-//    }
-//    if (!popupView) {
-//        popupView = [[KSBasePopupView alloc]initWithNibName:@"KSBasePopupView" bundle:nil];
-//        popupView.delegate = self;
-//    }
-//    
-//    if (listSongs && listSongs.count > indexPath.row) {
-//        SNSongModel *selectedSong = [listSongs objectAtIndex:indexPath.row];
-//        if (selectedSong) {
-//            popupView.songModel = selectedSong;
-//            [popupView showInView:self.view animated:YES completeBlock:nil];
-//        }
-//    }
+    if (listSongs && listSongs.count > indexPath.row) {
+        SNSongModel *selectedSong = [listSongs objectAtIndex:indexPath.row];
+        if (selectedSong) {
+            popupView.songModel = selectedSong;
+            [popupView showInView:self.view animated:YES completeBlock:nil];
+        }
+    }
 }
 
 
@@ -352,6 +356,24 @@
     
 }
 
+-(void)showLoading
+{
+    // The hud will dispable all input on the window
+    _loadingView = [[MBProgressHUD alloc] init];
+    [self.view addSubview:_loadingView];
+    _loadingView.labelText = @"Loading data...";
+    
+    [_loadingView show:YES];
+}
+
+-(void)hideLoading
+{
+    if (_loadingView) {
+        [_loadingView hide:YES afterDelay:2];
+        [_loadingView removeFromSuperview];
+        _loadingView = nil;
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -478,6 +500,13 @@
     }
 }
 
+-(void)addToQueue:(SNSongModel *)song
+{
+    [self sendRemoteControl:REMOTE_PLAY songNumber:nil];
+//    if (song) {
+//        [self sendRemoteControl:REMOTE_RES songNumber:song.number];
+//    }
+}
 
 #pragma Keyboard notification
 -(void)keyboardWillShow:(NSNotification*)notification
@@ -515,16 +544,24 @@
     [outputStream open];
 }
 
+-(void)requestGestListSong
+{
+    if (!_loadingView) {
+        [self showLoading];
+    }
+    [self sendRemoteControl:REMOTE_SONG_LIST songNumber:nil];
+}
+
 
 -(void)sendRemoteControl:(REMOTE)remote songNumber:(NSString*)songNumber
 {
     NSInteger number = [songNumber integerValue];
     NSMutableData *remoteData = [NSMutableData dataWithBytes:&remote length:sizeof(remote)];
     if (![NSString isStringEmpty:songNumber]) {
-        [remoteData appendData:[NSData dataWithBytes:&number length:sizeof(number)]];
+        uint32_t tempValueId = CFSwapInt32HostToBig(number);
+        [remoteData appendData:[NSData dataWithBytes:&tempValueId length:sizeof(uint32_t)]];
     }
-    
-    [self sendData:remoteData];
+    [self performSelectorInBackground:@selector(sendData:) withObject:remoteData];
 }
 
 -(void)sendData:(NSData*)data
@@ -537,30 +574,77 @@
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
 	switch (streamEvent) {
-            
 		case NSStreamEventOpenCompleted:
 			NSLog(@"Stream opened");
-            isFirstReceived = YES;
-            receivedBytes = 0;
+            
+            if (!isGetList) {
+                [self performSelector:@selector(requestGestListSong) withObject:nil afterDelay:2];
+            }
 			break;
 
 		case NSStreamEventHasBytesAvailable:
             if (theStream == inputStream) {
                 uint8_t buffer[1024];
-                NSMutableData *receivedData = [[NSMutableData alloc]init];
-                while ([inputStream hasBytesAvailable]) {
-                    long len = [inputStream read:buffer maxLength:sizeof(buffer)];
-                    if (len > 0) {
-                        [receivedData appendBytes:buffer length:len];
+                NSInteger lengthRead = 0;
+                //check if still not got song list
+                if (!isGetList) {
+                    
+                    @try {
+                        //check if not get first package for length file
+                        if ([SNStreamUtil bufferFirstPackageIsNull:mBufferFirstPackage]) {
+                            mDataRead = [[NSMutableData alloc]init];
+                            NSMutableData* intByte = [SNStreamUtil readInt:inputStream];
+                            [intByte getBytes:mBufferFirstPackage length:[intByte length]];
+                            
+                            NSMutableData *numberIntBytes = [SNStreamUtil readInt:inputStream];
+                            uint8_t songNumberBytes[4];
+                            [numberIntBytes getBytes:songNumberBytes length:[numberIntBytes length]];
+                            if (numberIntBytes) {
+                                int numberSongs = [SNStreamUtil bufferFirstPackageToInt:songNumberBytes];
+                            }
+                        }
+                        
+                        //total length will be received
+                        NSUInteger totalLength = [SNStreamUtil bufferFirstPackageToInt:mBufferFirstPackage];
+                        
+                        if (totalLength >0) {
+                            NSUInteger currentReading =0;
+                            while ([inputStream hasBytesAvailable]) {
+                                //check if tre remain data > size of the buffer
+                                if (mCurrentRead + sizeof(buffer) < totalLength) {
+                                    currentReading = sizeof(buffer);
+                                }else{// if the remain data < size of the buffer
+                                    currentReading = totalLength - mCurrentRead;
+                                }
+                                
+                                lengthRead = [inputStream read:buffer maxLength:currentReading];
+                                if (lengthRead >0) {
+                                    mCurrentRead += lengthRead;
+                                    
+                                    if (mCurrentRead < totalLength) {//if not full data
+                                        [mDataRead appendBytes:buffer length:lengthRead];
+                                    }else{//If read full data
+                                        NSString *receivedString = [[NSString alloc]initWithData:mDataRead encoding:NSUTF8StringEncoding];
+                                        if (![NSString isStringEmpty:receivedString]) {
+                                            [self performSelectorInBackground:@selector(parseSong:) withObject:receivedString];
+                                        }
+                                        isGetList = YES;
+                                        mDataRead = nil;
+                                    }
+                                }
+                                
+                            }
+                        }
+
                     }
-                }
-                if (!buffer) {
-                    NSLog(@"Received: %@",receivedString);
-                }
-                
-                NSString *output = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-                if (output) {
-                    receivedString = [receivedString stringByAppendingString:output];
+                    @catch (NSException *exception) {
+                        NSLog(@"Error: %@", [exception description]);
+                    }
+                    @finally {
+                        
+                    }
+                    
+                    
                 }
                 
             }
@@ -581,11 +665,29 @@
     
 }
 
+-(void)parseSong:(NSString*)result
+{
+    if (![NSString isStringEmpty:result]) {
+        [[SNRemoteSongsManager sharedInstance] parseListSongFromString:result];
+        listSongsFull = [SNRemoteSongsManager sharedInstance].listSong;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //Reload data with new songs
+            [self hideLoading];
+            [self reloadSong];
+        });
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 #pragma mark - ScanQRCodeViewControllerDelegate
 -(void)didScanQRCodeWithValue:(NSString *)stringValue
 {
 //    if (![NSString isStringEmpty:stringValue]) {
-        [self initNetworkCommunicationToHost:stringValue port:2468];//@"172.18.23.54"
+        [self initNetworkCommunicationToHost:@"192.168.11.114" port:6789];//@"172.18.23.54"
 //    }
 }
 @end

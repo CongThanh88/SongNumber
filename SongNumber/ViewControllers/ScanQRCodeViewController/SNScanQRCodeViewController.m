@@ -7,6 +7,9 @@
 //
 
 #import "SNScanQRCodeViewController.h"
+#import "SNSearchSongViewController.h"
+#import "NSString+Addition.h"
+
 
 @interface SNScanQRCodeViewController ()
 @property (nonatomic, strong) AVCaptureSession *captureSession;
@@ -134,10 +137,17 @@
 }
 
 - (IBAction)btnOk:(id)sender {
-    if (_delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {//scanValue
-        [_delegate didScanQRCodeWithValue:scanValue];
+//    if (_delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {//scanValue
+//        [_delegate didScanQRCodeWithValue:scanValue];
+//    }
+//    
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    if (![NSString isStringEmpty:scanValue]) {
+        SNSearchSongViewController *searchVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
+        [self presentViewController:searchVC animated:YES completion:^{
+            [searchVC initNetworkCommunicationToHost:scanValue port:2468];
+        }];
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

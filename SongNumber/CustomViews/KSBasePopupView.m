@@ -92,6 +92,14 @@
     [self closePopup];
 }
 
+- (IBAction)btnAddToQueue:(id)sender {
+    
+    if (_songModel && _delegate && [_delegate respondsToSelector:@selector(addToQueue:)]) {
+        [_delegate addToQueue:_songModel];
+    }
+    [self closePopup];
+}
+
 - (void)showInView:(UIView *)aView animated:(BOOL)animated completeBlock:(void (^)(void))closePopupBlock
 {
     _closePopupBlock =  closePopupBlock;

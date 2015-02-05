@@ -25,6 +25,9 @@
 		18845FB319ED600300E6E012 /* SNSongTableViewCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18845FB219ED600300E6E012 /* SNSongTableViewCell_Ipad.xib */; };
 		18BFA1DB19C8741D00DC63B5 /* SettingValues.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BFA1DA19C8741D00DC63B5 /* SettingValues.plist */; };
 		18BFA1DD19C8754A00DC63B5 /* TheLoaiBaiHat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BFA1DC19C8754A00DC63B5 /* TheLoaiBaiHat.plist */; };
+		299768091A83B5B2002920F6 /* SNStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 299768081A83B5B2002920F6 /* SNStreamUtil.m */; };
+		2997680D1A83C925002920F6 /* SNRemoteSongsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2997680C1A83C925002920F6 /* SNRemoteSongsManager.m */; };
+		299768121A83D158002920F6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 299768111A83D158002920F6 /* MBProgressHUD.m */; };
 		A40648C41A80ABF7005C8A84 /* SNScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40648C21A80ABF7005C8A84 /* SNScanQRCodeViewController.m */; };
 		A40648C51A80ABF7005C8A84 /* SNScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40648C31A80ABF7005C8A84 /* SNScanQRCodeViewController.xib */; };
 		A4B70E0519C91F460022DD1D /* SongNumber-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B70E0419C91F460022DD1D /* SongNumber-Info.plist */; };
@@ -103,6 +106,12 @@
 		18BFA1DC19C8754A00DC63B5 /* TheLoaiBaiHat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TheLoaiBaiHat.plist; sourceTree = "<group>"; };
 		18BFA1DE19C875A500DC63B5 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18BFA1DF19C875A500DC63B5 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		299768071A83B5B2002920F6 /* SNStreamUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNStreamUtil.h; sourceTree = "<group>"; };
+		299768081A83B5B2002920F6 /* SNStreamUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNStreamUtil.m; sourceTree = "<group>"; };
+		2997680B1A83C925002920F6 /* SNRemoteSongsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNRemoteSongsManager.h; path = RemoteSongsManager/SNRemoteSongsManager.h; sourceTree = "<group>"; };
+		2997680C1A83C925002920F6 /* SNRemoteSongsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNRemoteSongsManager.m; path = RemoteSongsManager/SNRemoteSongsManager.m; sourceTree = "<group>"; };
+		299768101A83D158002920F6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		299768111A83D158002920F6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		A40648C11A80ABF7005C8A84 /* SNScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNScanQRCodeViewController.h; path = ScanQRCodeViewController/SNScanQRCodeViewController.h; sourceTree = "<group>"; };
 		A40648C21A80ABF7005C8A84 /* SNScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNScanQRCodeViewController.m; path = ScanQRCodeViewController/SNScanQRCodeViewController.m; sourceTree = "<group>"; };
 		A40648C31A80ABF7005C8A84 /* SNScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SNScanQRCodeViewController.xib; path = ScanQRCodeViewController/SNScanQRCodeViewController.xib; sourceTree = "<group>"; };
@@ -195,6 +204,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2997680A1A83C8F8002920F6 /* RemoteDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				2997680B1A83C925002920F6 /* SNRemoteSongsManager.h */,
+				2997680C1A83C925002920F6 /* SNRemoteSongsManager.m */,
+			);
+			name = RemoteDataManager;
+			sourceTree = "<group>";
+		};
+		2997680F1A83D158002920F6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				299768101A83D158002920F6 /* MBProgressHUD.h */,
+				299768111A83D158002920F6 /* MBProgressHUD.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		A40648C01A80ABBD005C8A84 /* ScanQRCodeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +266,8 @@
 		A4D3742A19C7EE490040A92F /* SongNumber */ = {
 			isa = PBXGroup;
 			children = (
+				2997680F1A83D158002920F6 /* Library */,
+				2997680A1A83C8F8002920F6 /* RemoteDataManager */,
 				A4D3748919C7F7FE0040A92F /* DownloadManager */,
 				A4D3748519C7F7DD0040A92F /* Parser */,
 				A4D3747F19C7F6840040A92F /* LyricsDetailViewController */,
@@ -370,6 +399,8 @@
 			children = (
 				A4D3747019C7F1E70040A92F /* HTLocalizeHelper.h */,
 				A4D3747119C7F1E70040A92F /* HTLocalizeHelper.m */,
+				299768071A83B5B2002920F6 /* SNStreamUtil.h */,
+				299768081A83B5B2002920F6 /* SNStreamUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -572,15 +603,18 @@
 				A4D3747E19C7F54E0040A92F /* SNSettingManager.m in Sources */,
 				A4D3745A19C7EED80040A92F /* HTDatabaseHelper.m in Sources */,
 				183CD47219E58AD20036DD85 /* KSBasePopupView.m in Sources */,
+				299768091A83B5B2002920F6 /* SNStreamUtil.m in Sources */,
 				A4D3743119C7EE490040A92F /* main.m in Sources */,
 				A4D3746119C7EF6C0040A92F /* SNSongTableViewCell.m in Sources */,
 				A40648C41A80ABF7005C8A84 /* SNScanQRCodeViewController.m in Sources */,
 				A4D3747319C7F1E70040A92F /* NSString+Addition.m in Sources */,
+				2997680D1A83C925002920F6 /* SNRemoteSongsManager.m in Sources */,
 				A4D3747419C7F1E70040A92F /* HTLocalizeHelper.m in Sources */,
 				A4D3745B19C7EED80040A92F /* SNSearchSongViewController.m in Sources */,
 				A4D3747719C7F3270040A92F /* SNSelectBoxView.m in Sources */,
 				A4D3743519C7EE490040A92F /* SNAppDelegate.m in Sources */,
 				A4D3748319C7F6840040A92F /* HTLyricsDetailViewController.m in Sources */,
+				299768121A83D158002920F6 /* MBProgressHUD.m in Sources */,
 				A4D3749819C7F8A80040A92F /* HTWordOfLine.m in Sources */,
 				A4D3748C19C7F7FE0040A92F /* HTAudioDownLoadManager.m in Sources */,
 				A4D3749619C7F8A80040A92F /* HTLineContent.m in Sources */,
@@ -713,14 +747,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: abc xyz (56XKYX4NM4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: do tam (VXZ44VXW83)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SongNumber/SongNumber-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SongNumber/SongNumber-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "iKaraoke list";
-				PROVISIONING_PROFILE = "4b00396d-7dc6-4484-80a0-383581be9b4c";
+				PROVISIONING_PROFILE = "5bf66e9f-1bf5-4295-bb4a-9e4a50c8fb3f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -736,7 +770,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SongNumber/SongNumber-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "iKaraoke list";
-				PROVISIONING_PROFILE = "4b00396d-7dc6-4484-80a0-383581be9b4c";
+				PROVISIONING_PROFILE = "5bf66e9f-1bf5-4295-bb4a-9e4a50c8fb3f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
