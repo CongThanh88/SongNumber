@@ -34,6 +34,10 @@
     SNScanQRCodeViewController *scanQRVC;
     NSInputStream *inputStream;
     NSOutputStream *outputStream;
+    BOOL isFirstReceived;
+    int fileLenght;
+    int receivedBytes;
+    NSString *receivedString;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -291,21 +295,23 @@
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (IS_IPAD) {
-        return;
-    }
-    if (!popupView) {
-        popupView = [[KSBasePopupView alloc]initWithNibName:@"KSBasePopupView" bundle:nil];
-        popupView.delegate = self;
-    }
+    [self sendRemoteControl:REMOTE_SONG_LIST songNumber:nil];
     
-    if (listSongs && listSongs.count > indexPath.row) {
-        SNSongModel *selectedSong = [listSongs objectAtIndex:indexPath.row];
-        if (selectedSong) {
-            popupView.songModel = selectedSong;
-            [popupView showInView:self.view animated:YES completeBlock:nil];
-        }
-    }
+//    if (IS_IPAD) {
+//        return;
+//    }
+//    if (!popupView) {
+//        popupView = [[KSBasePopupView alloc]initWithNibName:@"KSBasePopupView" bundle:nil];
+//        popupView.delegate = self;
+//    }
+//    
+//    if (listSongs && listSongs.count > indexPath.row) {
+//        SNSongModel *selectedSong = [listSongs objectAtIndex:indexPath.row];
+//        if (selectedSong) {
+//            popupView.songModel = selectedSong;
+//            [popupView showInView:self.view animated:YES completeBlock:nil];
+//        }
+//    }
 }
 
 
@@ -523,7 +529,7 @@
 
 -(void)sendData:(NSData*)data
 {
-    if (data && outputStream) {
+    if (data && outputStream && [outputStream hasSpaceAvailable]) {
         [outputStream write:[data bytes] maxLength:[data length]];
     }
 }
@@ -534,25 +540,29 @@
             
 		case NSStreamEventOpenCompleted:
 			NSLog(@"Stream opened");
+            isFirstReceived = YES;
+            receivedBytes = 0;
 			break;
-            
+
 		case NSStreamEventHasBytesAvailable:
             if (theStream == inputStream) {
-                
                 uint8_t buffer[1024];
-                int len;
-                
+                NSMutableData *receivedData = [[NSMutableData alloc]init];
                 while ([inputStream hasBytesAvailable]) {
-                    len = [inputStream read:buffer maxLength:sizeof(buffer)];
+                    long len = [inputStream read:buffer maxLength:sizeof(buffer)];
                     if (len > 0) {
-                        
-                        NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
-                        
-                        if (nil != output) {
-                            NSLog(@"server said: %@", output);
-                        }
+                        [receivedData appendBytes:buffer length:len];
                     }
                 }
+                if (!buffer) {
+                    NSLog(@"Received: %@",receivedString);
+                }
+                
+                NSString *output = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+                if (output) {
+                    receivedString = [receivedString stringByAppendingString:output];
+                }
+                
             }
 			break;
             
@@ -574,8 +584,8 @@
 #pragma mark - ScanQRCodeViewControllerDelegate
 -(void)didScanQRCodeWithValue:(NSString *)stringValue
 {
-    if (![NSString isStringEmpty:stringValue]) {
-        [self initNetworkCommunicationToHost:stringValue port:2468];
-    }
+//    if (![NSString isStringEmpty:stringValue]) {
+        [self initNetworkCommunicationToHost:stringValue port:2468];//@"172.18.23.54"
+//    }
 }
 @end

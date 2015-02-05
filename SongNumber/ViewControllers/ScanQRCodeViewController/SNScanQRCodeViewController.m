@@ -134,7 +134,7 @@
 }
 
 - (IBAction)btnOk:(id)sender {
-    if (scanValue && _delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {
+    if (_delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {//scanValue
         [_delegate didScanQRCodeWithValue:scanValue];
     }
     
