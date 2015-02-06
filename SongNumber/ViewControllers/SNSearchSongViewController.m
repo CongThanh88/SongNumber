@@ -39,6 +39,7 @@
     NSOutputStream *outputStream;
 
     BOOL isGetList;
+    BOOL isRequestedGetLis;
     NSMutableData* mDataRead;
 
     // Read 4 bytes
@@ -502,10 +503,10 @@
 
 -(void)addToQueue:(SNSongModel *)song
 {
-    [self sendRemoteControl:REMOTE_PLAY songNumber:nil];
-//    if (song) {
-//        [self sendRemoteControl:REMOTE_RES songNumber:song.number];
-//    }
+    if (song) {
+        //[self sendRemoteControl:REMOTE_RES songNumber:song.number];
+        [self sendRemoteControl:REMOTE_FAVORITE songNumber:song.number];
+    }
 }
 
 #pragma Keyboard notification
@@ -555,7 +556,7 @@
 
 -(void)sendRemoteControl:(REMOTE)remote songNumber:(NSString*)songNumber
 {
-    NSInteger number = [songNumber integerValue];
+    NSUInteger number = [songNumber integerValue];
     NSMutableData *remoteData = [NSMutableData dataWithBytes:&remote length:sizeof(remote)];
     if (![NSString isStringEmpty:songNumber]) {
         uint32_t tempValueId = CFSwapInt32HostToBig(number);
@@ -568,6 +569,9 @@
 {
     if (data && outputStream && [outputStream hasSpaceAvailable]) {
         [outputStream write:[data bytes] maxLength:[data length]];
+    }else if(data && outputStream){
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendData:) object:nil];
+        [self performSelector:@selector(sendData:) withObject:data afterDelay:2];
     }
 }
 
@@ -577,7 +581,8 @@
 		case NSStreamEventOpenCompleted:
 			NSLog(@"Stream opened");
             
-            if (!isGetList) {
+            if (!isRequestedGetLis) {
+                isRequestedGetLis = YES;
                 [self performSelector:@selector(requestGestListSong) withObject:nil afterDelay:2];
             }
 			break;
@@ -643,20 +648,17 @@
                     @finally {
                         
                     }
-                    
-                    
                 }
                 
             }
 			break;
             
 		case NSStreamEventErrorOccurred:
-			NSLog(@"Can not connect to the host! error: %@",[theStream streamError]);
+			[theStream close];
+            [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 			break;
             
 		case NSStreamEventEndEncountered:
-            [theStream close];
-            [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 			break;
             
 		default:

@@ -70,21 +70,45 @@
 {
     if (response) {
         NSArray *arrayFields = [response componentsSeparatedByString:@"\t"];
-        if (arrayFields && arrayFields.count >= 13 ) {
+        if (arrayFields && arrayFields.count >0 ) {
             SNSongModel *newSong = [[SNSongModel alloc]init];
             newSong.number = [arrayFields objectAtIndex:0];
-            newSong.title = [arrayFields objectAtIndex:1];
-            newSong.title_shortcut = [arrayFields objectAtIndex:2];
-            newSong.title_search = [arrayFields objectAtIndex:3];
-            newSong.title_search2 = [arrayFields objectAtIndex:4];
-            newSong.singer = [arrayFields objectAtIndex:5];
-            newSong.genre = [arrayFields objectAtIndex:6];
-            newSong.genre_search = [arrayFields objectAtIndex:7];
-            newSong.short_lyric = [arrayFields objectAtIndex:8];
-            newSong.language = [arrayFields objectAtIndex:9];
-            newSong.is_favorite = [[arrayFields objectAtIndex:10] boolValue];
-            newSong.is_free = [[arrayFields objectAtIndex:11] boolValue];
-            newSong.is_new = [[arrayFields objectAtIndex:12] boolValue];
+            if (arrayFields.count >1 ) {
+                newSong.title = [arrayFields objectAtIndex:1];
+            }
+            if (arrayFields.count >2 ) {
+                newSong.title_shortcut = [arrayFields objectAtIndex:2];
+            }
+            if (arrayFields.count >3 ) {
+                newSong.title_search = [arrayFields objectAtIndex:3];
+            }
+            if (arrayFields.count >4 ) {
+                newSong.title_search2 = [arrayFields objectAtIndex:4];
+            }
+            if (arrayFields.count >5 ) {
+                newSong.singer = [arrayFields objectAtIndex:5];
+            }
+            if (arrayFields.count >6 ) {
+                newSong.genre = [arrayFields objectAtIndex:6];
+            }
+            if (arrayFields.count >7 ) {
+                newSong.genre_search = [arrayFields objectAtIndex:7];
+            }
+            if (arrayFields.count >8 ) {
+                newSong.short_lyric = [arrayFields objectAtIndex:8];
+            }
+            if (arrayFields.count >9 ) {
+                newSong.language = [arrayFields objectAtIndex:9];
+            }
+            if (arrayFields.count >10 ) {
+                newSong.is_favorite = [[arrayFields objectAtIndex:10] boolValue];
+            }
+            if (arrayFields.count >11 ) {
+                newSong.is_free = [[arrayFields objectAtIndex:11] boolValue];
+            }
+            if (arrayFields.count >12 ) {
+                newSong.is_new = [[arrayFields objectAtIndex:12] boolValue];
+            }
             return newSong;
         }
     }
@@ -95,12 +119,16 @@
 {
     if (listString && listString.count>0) {
         NSArray *listSong = [[NSArray alloc]init];
+        int i=0;
         for (NSString *songResponse in listString) {
-            if (songResponse) {
+            if (songResponse && i<100) {
+                i++;
                 SNSongModel *newSong = [SNSongModel parseSongFromResponseString:songResponse];
                 if (newSong) {
                     listSong = [listSong arrayByAddingObject:newSong];
                 }
+            }else{
+                return listSong;
             }
         }
         return listSong;
