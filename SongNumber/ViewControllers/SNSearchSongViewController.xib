@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SNSearchSongViewController">
@@ -11,8 +12,10 @@
                 <outlet property="btnFavorite" destination="W2w-SY-hvA" id="vt2-1F-w3A"/>
                 <outlet property="btnFree" destination="5gq-UO-1Ao" id="KMs-yf-Eu7"/>
                 <outlet property="btnNew" destination="Pvp-zG-bj5" id="e2c-ns-4xe"/>
+                <outlet property="btnNext" destination="5gr-Ow-yYa" id="4LA-kj-q4K"/>
                 <outlet property="btnNgonNgu" destination="8t1-eZ-hhb" id="v5A-Tq-G73"/>
                 <outlet property="btnSort" destination="2mF-1D-EDo" id="RtT-in-GEc"/>
+                <outlet property="btnStop" destination="mK0-Y1-7k4" id="ONc-Vk-dhL"/>
                 <outlet property="btnTheLoai" destination="KLa-5x-G7f" id="7bO-4x-dj6"/>
                 <outlet property="tableView" destination="zZS-p1-C2y" id="W0j-Zb-hei"/>
                 <outlet property="txtSearchField" destination="WNn-50-hdA" id="aLb-sI-l26"/>
@@ -24,28 +27,31 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="VE6-kp-NWj">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VE6-kp-NWj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_logo.png" id="EyV-kN-BPc">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="EyV-kN-BPc">
                             <rect key="frame" x="12" y="2" width="78" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="tFq-I6-4xo"/>
+                                <constraint firstAttribute="width" constant="78" id="wfL-00-b85"/>
+                            </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" id="Out-Iw-k2Q">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Out-Iw-k2Q">
                             <rect key="frame" x="116" y="4" width="197" height="28"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="13" id="WNn-50-hdA">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="WNn-50-hdA">
                                     <rect key="frame" x="2" y="1" width="163" height="26"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p5f-ff-gCI">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5f-ff-gCI">
                                     <rect key="frame" x="169" y="2" width="24" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="Yvq-oR-X4l"/>
+                                        <constraint firstAttribute="width" constant="24" id="f6c-va-Wag"/>
+                                    </constraints>
                                     <state key="normal" image="ic_delete_text.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -55,10 +61,13 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="p5f-ff-gCI" secondAttribute="centerY" id="KUJ-dS-nxb"/>
+                                <constraint firstAttribute="trailing" secondItem="p5f-ff-gCI" secondAttribute="trailing" constant="4" id="YOC-QP-4ls"/>
+                            </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DP4-7e-4XP">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DP4-7e-4XP">
                             <rect key="frame" x="12" y="2" width="73" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -68,118 +77,300 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.66863029230000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="EyV-kN-BPc" firstAttribute="leading" secondItem="VE6-kp-NWj" secondAttribute="leading" constant="12" id="7IS-hr-o10"/>
+                        <constraint firstItem="EyV-kN-BPc" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="top" constant="2" id="89I-Rn-1cq"/>
+                        <constraint firstItem="Out-Iw-k2Q" firstAttribute="leading" secondItem="EyV-kN-BPc" secondAttribute="trailing" constant="26" id="GmZ-fu-5pp"/>
+                        <constraint firstItem="Out-Iw-k2Q" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="top" constant="4" id="PX2-tm-gyd"/>
+                        <constraint firstAttribute="trailing" secondItem="Out-Iw-k2Q" secondAttribute="trailing" constant="7" id="dqf-0o-YIP"/>
+                        <constraint firstAttribute="height" constant="36" id="gRq-g4-YEu"/>
+                        <constraint firstAttribute="bottom" secondItem="Out-Iw-k2Q" secondAttribute="bottom" constant="4" id="lIl-of-uVT"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" id="yIq-8I-SE5">
-                    <rect key="frame" x="0.0" y="36" width="320" height="455"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIq-8I-SE5">
+                    <rect key="frame" x="0.0" y="36" width="320" height="443"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8t1-eZ-hhb" customClass="SNSelectBoxView">
-                            <rect key="frame" x="3" y="4" width="110" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <inset key="contentEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Tiếng Việt" image="ic_filter_language.png">
-                                <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnNgonNgu:" destination="-1" eventType="touchUpInside" id="t6w-5V-8AQ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KLa-5x-G7f" customClass="SNSelectBoxView">
-                            <rect key="frame" x="116" y="4" width="98" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <inset key="contentEdgeInsets" minX="-21" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Tất cả" image="ic_filter_genre.png">
-                                <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnTheLoai:" destination="-1" eventType="touchUpInside" id="7ck-Vo-0tO"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2mF-1D-EDo" customClass="SNSelectBoxView">
-                            <rect key="frame" x="217" y="4" width="100" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <inset key="contentEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Tất cả" image="ic_filter_sort.png">
-                                <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnSort:" destination="-1" eventType="touchUpInside" id="1Rz-Ju-Pp7"/>
-                            </connections>
-                        </button>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="zZS-p1-C2y">
-                            <rect key="frame" x="0.0" y="31" width="320" height="384"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zZS-p1-C2y">
+                            <rect key="frame" x="0.0" y="34" width="320" height="330"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </tableView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SHo-EX-NGC" customClass="SNToggleButton">
-                            <rect key="frame" x="0.0" y="415" width="80" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="Tất cả">
-                                <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnAll:" destination="-1" eventType="touchUpInside" id="Mg0-IZ-ShF"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5gq-UO-1Ao" customClass="SNToggleButton">
-                            <rect key="frame" x="81" y="415" width="80" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="Miễn phí">
-                                <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnFree:" destination="-1" eventType="touchUpInside" id="HLQ-IG-ER0"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W2w-SY-hvA" customClass="SNToggleButton">
-                            <rect key="frame" x="161" y="415" width="80" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="Yêu thích">
-                                <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnFavorite:" destination="-1" eventType="touchUpInside" id="Fdw-u1-3fp"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pvp-zG-bj5" customClass="SNToggleButton">
-                            <rect key="frame" x="240" y="415" width="80" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="Bài hát mới">
-                                <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnNew:" destination="-1" eventType="touchUpInside" id="KRK-Vs-Wiw"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SH-vhf">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLa-5x-G7f" customClass="SNSelectBoxView">
+                                    <rect key="frame" x="115" y="6" width="89" height="24"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="xcy-2C-LRj"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Tất cả" image="ic_filter_genre.png">
+                                        <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnTheLoai:" destination="-1" eventType="touchUpInside" id="7ck-Vo-0tO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mF-1D-EDo" customClass="SNSelectBoxView">
+                                    <rect key="frame" x="201" y="6" width="119" height="24"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="JnF-TK-Sti"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <inset key="contentEdgeInsets" minX="-14" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Tất cả" image="ic_filter_sort.png">
+                                        <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnSort:" destination="-1" eventType="touchUpInside" id="1Rz-Ju-Pp7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8t1-eZ-hhb" customClass="SNSelectBoxView">
+                                    <rect key="frame" x="0.0" y="6" width="107" height="24"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="kgf-kE-9Db"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <inset key="contentEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Tiếng Việt" image="ic_filter_language.png">
+                                        <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnNgonNgu:" destination="-1" eventType="touchUpInside" id="t6w-5V-8AQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="KLa-5x-G7f" firstAttribute="width" secondItem="2mF-1D-EDo" secondAttribute="width" id="7Js-tw-w1O"/>
+                                <constraint firstItem="8t1-eZ-hhb" firstAttribute="leading" secondItem="x0v-SH-vhf" secondAttribute="leading" id="8l8-Y7-l3x"/>
+                                <constraint firstAttribute="centerX" secondItem="KLa-5x-G7f" secondAttribute="centerX" id="EF0-6J-Ng9"/>
+                                <constraint firstItem="2mF-1D-EDo" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="6" id="M2f-7A-HAD"/>
+                                <constraint firstItem="KLa-5x-G7f" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="6" id="Myi-Dn-aPd"/>
+                                <constraint firstAttribute="height" constant="35" id="Zpk-hG-niM"/>
+                                <constraint firstItem="2mF-1D-EDo" firstAttribute="width" secondItem="8t1-eZ-hhb" secondAttribute="width" id="mTT-Gb-eLY"/>
+                                <constraint firstItem="8t1-eZ-hhb" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="6" id="xk3-1C-n9P"/>
+                                <constraint firstAttribute="trailing" secondItem="2mF-1D-EDo" secondAttribute="trailing" id="ynq-or-y5r"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fW-ny-Mho">
+                            <rect key="frame" x="0.0" y="364" width="320" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHo-EX-NGC" customClass="SNToggleButton">
+                                    <rect key="frame" x="0.0" y="3" width="80" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="dO7-Ll-AHT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Tất cả">
+                                        <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnAll:" destination="-1" eventType="touchUpInside" id="Mg0-IZ-ShF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gq-UO-1Ao" customClass="SNToggleButton">
+                                    <rect key="frame" x="81" y="3" width="80" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Bnz-lh-wbu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Miễn phí">
+                                        <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnFree:" destination="-1" eventType="touchUpInside" id="HLQ-IG-ER0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2w-SY-hvA" customClass="SNToggleButton">
+                                    <rect key="frame" x="161" y="3" width="80" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Not-hQ-Hz0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Yêu thích">
+                                        <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnFavorite:" destination="-1" eventType="touchUpInside" id="Fdw-u1-3fp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvp-zG-bj5" customClass="SNToggleButton">
+                                    <rect key="frame" x="240" y="3" width="80" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="KhM-qp-bfe"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Bài hát mới">
+                                        <color key="titleColor" red="0.066500756048387094" green="0.027469758064516129" blue="0.2580645161290322" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnNew:" destination="-1" eventType="touchUpInside" id="KRK-Vs-Wiw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="SHo-EX-NGC" firstAttribute="top" secondItem="4fW-ny-Mho" secondAttribute="top" constant="3" id="0fL-dC-5N6"/>
+                                <constraint firstItem="W2w-SY-hvA" firstAttribute="top" secondItem="4fW-ny-Mho" secondAttribute="top" constant="3" id="7rD-ON-1uw"/>
+                                <constraint firstAttribute="height" constant="36" id="9b6-19-Rdu"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="leading" secondItem="W2w-SY-hvA" secondAttribute="trailing" constant="-1" id="Et0-Gz-Fjw"/>
+                                <constraint firstItem="W2w-SY-hvA" firstAttribute="leading" secondItem="5gq-UO-1Ao" secondAttribute="trailing" id="KMN-3Y-QZf"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="height" secondItem="5gq-UO-1Ao" secondAttribute="height" id="Mo7-Hj-4NU"/>
+                                <constraint firstAttribute="trailing" secondItem="Pvp-zG-bj5" secondAttribute="trailing" id="PEq-QK-PWh"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="width" secondItem="5gq-UO-1Ao" secondAttribute="width" id="PeA-RH-h7C"/>
+                                <constraint firstItem="5gq-UO-1Ao" firstAttribute="top" secondItem="4fW-ny-Mho" secondAttribute="top" constant="3" id="aOC-it-2D7"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="height" secondItem="W2w-SY-hvA" secondAttribute="height" id="bqa-HR-lq6"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="height" secondItem="SHo-EX-NGC" secondAttribute="height" id="bzT-we-jS4"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="width" secondItem="W2w-SY-hvA" secondAttribute="width" id="gbN-qO-WnP"/>
+                                <constraint firstItem="5gq-UO-1Ao" firstAttribute="leading" secondItem="SHo-EX-NGC" secondAttribute="trailing" constant="1" id="ibk-fL-25r"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="width" secondItem="SHo-EX-NGC" secondAttribute="width" id="ii8-eL-rfl"/>
+                                <constraint firstItem="SHo-EX-NGC" firstAttribute="leading" secondItem="4fW-ny-Mho" secondAttribute="leading" id="tMg-dX-g20"/>
+                                <constraint firstItem="Pvp-zG-bj5" firstAttribute="top" secondItem="4fW-ny-Mho" secondAttribute="top" constant="3" id="xHv-hD-P6S"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfP-t0-tDz">
+                            <rect key="frame" x="0.0" y="397" width="320" height="46"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckX-s0-Ku2" customClass="SNToggleButton">
+                                    <rect key="frame" x="51" y="2" width="51" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="51" id="K2m-RA-iSo"/>
+                                        <constraint firstAttribute="height" constant="44" id="sbp-Eh-PVC"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" image="pause.png">
+                                        <color key="titleColor" red="0.066500756049999998" green="0.027469758059999998" blue="0.25806451609999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnFree:" destination="-1" eventType="touchUpInside" id="lqD-we-YRO"/>
+                                        <action selector="btnPaues:" destination="-1" eventType="touchUpInside" id="oeC-j9-s1Q"/>
+                                        <action selector="btnPause:" destination="-1" eventType="touchUpInside" id="myY-BI-0d9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVI-U5-qh1" customClass="SNToggleButton">
+                                    <rect key="frame" x="103" y="2" width="54" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="HsF-4a-gji"/>
+                                        <constraint firstAttribute="width" constant="54" id="PWf-aS-Cn0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" image="play.png">
+                                        <color key="titleColor" red="0.066500756049999998" green="0.027469758059999998" blue="0.25806451609999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnFavorite:" destination="-1" eventType="touchUpInside" id="7gP-jx-tyG"/>
+                                        <action selector="btnNext:" destination="-1" eventType="touchUpInside" id="nGy-jm-NQr"/>
+                                        <action selector="btnPlay:" destination="-1" eventType="touchUpInside" id="d9m-Ul-pZg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
+                                    <rect key="frame" x="154" y="0.0" width="52" height="46.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="52" id="BJc-Ww-mlR"/>
+                                        <constraint firstAttribute="height" constant="46" id="HKL-aW-gKF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" image="next.png">
+                                        <color key="titleColor" red="0.066500756049999998" green="0.027469758059999998" blue="0.25806451609999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnNew:" destination="-1" eventType="touchUpInside" id="0vB-ai-wtT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mK0-Y1-7k4" customClass="SNToggleButton">
+                                    <rect key="frame" x="0.0" y="1" width="49" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="49" id="JwK-px-8Zw"/>
+                                        <constraint firstAttribute="height" constant="45" id="qKD-nn-kgJ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" image="icon_stop.png">
+                                        <color key="titleColor" red="0.066500756049999998" green="0.027469758059999998" blue="0.25806451609999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnAll:" destination="-1" eventType="touchUpInside" id="8Ev-BO-ktT"/>
+                                        <action selector="btnStop:" destination="-1" eventType="touchDragInside" id="vE8-rN-2CS"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtc-Gh-ihE">
+                                    <rect key="frame" x="214" y="0.0" width="56" height="46.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="56" id="4di-Vc-Icn"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="DiH-R3-t37"/>
+                                        <constraint firstAttribute="height" constant="46.5" id="pG3-j4-PEx"/>
+                                    </constraints>
+                                    <state key="normal" image="ic_singer_voice.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnOnOffSingerVoice:" destination="-1" eventType="touchUpInside" id="Lh9-1V-Pcn"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Gtc-Gh-ihE" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" constant="214" id="4UQ-50-YcF"/>
+                                <constraint firstItem="mK0-Y1-7k4" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="1" id="6lv-VO-yWO"/>
+                                <constraint firstItem="TVI-U5-qh1" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" constant="103" id="79n-PT-K1X"/>
+                                <constraint firstItem="mK0-Y1-7k4" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" id="Ccy-dE-Xk1"/>
+                                <constraint firstItem="TVI-U5-qh1" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="1" id="E5y-Lm-dPu"/>
+                                <constraint firstItem="ckX-s0-Ku2" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="2" id="Ilg-5i-Ayc"/>
+                                <constraint firstItem="5gr-Ow-yYa" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" constant="154" id="L2r-mA-JGs"/>
+                                <constraint firstAttribute="height" constant="46" id="MHK-hq-mVl"/>
+                                <constraint firstItem="5gr-Ow-yYa" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="1" id="m2w-S2-K1g"/>
+                                <constraint firstItem="Gtc-Gh-ihE" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" id="oxx-7W-BdO"/>
+                                <constraint firstItem="ckX-s0-Ku2" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" constant="51" id="rma-46-7Bd"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="0.25" colorSpace="calibratedRGB"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ZfP-t0-tDz" secondAttribute="trailing" id="3LN-Wc-Xqf"/>
+                        <constraint firstAttribute="bottom" secondItem="zZS-p1-C2y" secondAttribute="bottom" constant="79" id="3bm-s3-iX6"/>
+                        <constraint firstAttribute="trailing" secondItem="4fW-ny-Mho" secondAttribute="trailing" id="7LP-zY-gkM"/>
+                        <constraint firstItem="ZfP-t0-tDz" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="JwQ-dS-7R2"/>
+                        <constraint firstAttribute="trailing" secondItem="zZS-p1-C2y" secondAttribute="trailing" id="OYt-Iq-gDh"/>
+                        <constraint firstItem="x0v-SH-vhf" firstAttribute="top" secondItem="yIq-8I-SE5" secondAttribute="top" id="Qam-pv-iX5"/>
+                        <constraint firstAttribute="trailing" secondItem="x0v-SH-vhf" secondAttribute="trailing" id="Tp6-Pf-HbX"/>
+                        <constraint firstAttribute="bottom" secondItem="4fW-ny-Mho" secondAttribute="bottom" constant="43" id="XtV-t2-3jU"/>
+                        <constraint firstItem="zZS-p1-C2y" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="Xvb-yo-YWe"/>
+                        <constraint firstAttribute="bottom" secondItem="ZfP-t0-tDz" secondAttribute="bottom" id="eUo-Jm-mhn"/>
+                        <constraint firstItem="x0v-SH-vhf" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="fm3-x4-Kjy"/>
+                        <constraint firstItem="zZS-p1-C2y" firstAttribute="top" secondItem="yIq-8I-SE5" secondAttribute="top" constant="34" id="rzb-UU-o5E"/>
+                        <constraint firstItem="4fW-ny-Mho" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="zo8-9h-QOL"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <constraints>
+                <constraint firstItem="VE6-kp-NWj" firstAttribute="top" secondItem="SOI-9I-Cdv" secondAttribute="top" id="15d-sO-pms"/>
+                <constraint firstItem="yIq-8I-SE5" firstAttribute="leading" secondItem="SOI-9I-Cdv" secondAttribute="leading" id="1qv-MR-fn8"/>
+                <constraint firstAttribute="bottom" secondItem="yIq-8I-SE5" secondAttribute="bottom" constant="1" id="Aip-gS-J7v"/>
+                <constraint firstAttribute="trailing" secondItem="VE6-kp-NWj" secondAttribute="trailing" id="BwP-UH-mts"/>
+                <constraint firstItem="yIq-8I-SE5" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="bottom" id="gP3-2t-Ybd"/>
+                <constraint firstItem="VE6-kp-NWj" firstAttribute="leading" secondItem="SOI-9I-Cdv" secondAttribute="leading" id="ixY-H5-nlD"/>
+                <constraint firstAttribute="trailing" secondItem="yIq-8I-SE5" secondAttribute="trailing" id="l7t-l5-QhF"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="244" y="249"/>
         </view>
     </objects>
     <resources>
@@ -188,5 +379,15 @@
         <image name="ic_filter_genre.png" width="23" height="23"/>
         <image name="ic_filter_language.png" width="23" height="23"/>
         <image name="ic_filter_sort.png" width="27" height="27"/>
+        <image name="ic_singer_voice.png" width="24" height="23"/>
+        <image name="icon_stop.png" width="16" height="16"/>
+        <image name="next.png" width="16" height="16"/>
+        <image name="pause.png" width="16" height="16"/>
+        <image name="play.png" width="16" height="16"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

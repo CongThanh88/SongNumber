@@ -25,6 +25,11 @@
 		18845FB319ED600300E6E012 /* SNSongTableViewCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18845FB219ED600300E6E012 /* SNSongTableViewCell_Ipad.xib */; };
 		18BFA1DB19C8741D00DC63B5 /* SettingValues.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BFA1DA19C8741D00DC63B5 /* SettingValues.plist */; };
 		18BFA1DD19C8754A00DC63B5 /* TheLoaiBaiHat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BFA1DC19C8754A00DC63B5 /* TheLoaiBaiHat.plist */; };
+		29650A141A85B87A007FC356 /* ic_singer_voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29650A0F1A85B87A007FC356 /* ic_singer_voice@2x.png */; };
+		29650A151A85B87A007FC356 /* icon_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29650A101A85B87A007FC356 /* icon_stop@2x.png */; };
+		29650A161A85B87A007FC356 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29650A111A85B87A007FC356 /* next@2x.png */; };
+		29650A171A85B87A007FC356 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29650A121A85B87A007FC356 /* pause@2x.png */; };
+		29650A181A85B87A007FC356 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29650A131A85B87A007FC356 /* play@2x.png */; };
 		299768091A83B5B2002920F6 /* SNStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 299768081A83B5B2002920F6 /* SNStreamUtil.m */; };
 		2997680D1A83C925002920F6 /* SNRemoteSongsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2997680C1A83C925002920F6 /* SNRemoteSongsManager.m */; };
 		299768121A83D158002920F6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 299768111A83D158002920F6 /* MBProgressHUD.m */; };
@@ -106,6 +111,11 @@
 		18BFA1DC19C8754A00DC63B5 /* TheLoaiBaiHat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TheLoaiBaiHat.plist; sourceTree = "<group>"; };
 		18BFA1DE19C875A500DC63B5 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18BFA1DF19C875A500DC63B5 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29650A0F1A85B87A007FC356 /* ic_singer_voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_singer_voice@2x.png"; sourceTree = "<group>"; };
+		29650A101A85B87A007FC356 /* icon_stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_stop@2x.png"; sourceTree = "<group>"; };
+		29650A111A85B87A007FC356 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
+		29650A121A85B87A007FC356 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		29650A131A85B87A007FC356 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
 		299768071A83B5B2002920F6 /* SNStreamUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNStreamUtil.h; sourceTree = "<group>"; };
 		299768081A83B5B2002920F6 /* SNStreamUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNStreamUtil.m; sourceTree = "<group>"; };
 		2997680B1A83C925002920F6 /* SNRemoteSongsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNRemoteSongsManager.h; path = RemoteSongsManager/SNRemoteSongsManager.h; sourceTree = "<group>"; };
@@ -447,6 +457,11 @@
 		A4D3749B19C7FBA40040A92F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				29650A0F1A85B87A007FC356 /* ic_singer_voice@2x.png */,
+				29650A101A85B87A007FC356 /* icon_stop@2x.png */,
+				29650A111A85B87A007FC356 /* next@2x.png */,
+				29650A121A85B87A007FC356 /* pause@2x.png */,
+				29650A131A85B87A007FC356 /* play@2x.png */,
 				18570B4F19F5DD3D007ABC25 /* ic_delete_text@2x.png */,
 				18570B4B19F5D3CE007ABC25 /* ic_favorites_disable@2x.png */,
 				18570B4C19F5D3CE007ABC25 /* ic_favorite@2x.png */,
@@ -549,6 +564,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29650A181A85B87A007FC356 /* play@2x.png in Resources */,
 				A4D374A119C7FBA40040A92F /* ic_free@2x.png in Resources */,
 				A4D3746219C7EF6C0040A92F /* SNSongTableViewCell.xib in Resources */,
 				1826283E19E43265003DDE4E /* ic_filter_sort@2x.png in Resources */,
@@ -556,6 +572,7 @@
 				A4D3742F19C7EE490040A92F /* InfoPlist.strings in Resources */,
 				A4D374A419C7FBA40040A92F /* ic_mtv@2x.png in Resources */,
 				1826283A19E43265003DDE4E /* ic_paid@2x.png in Resources */,
+				29650A141A85B87A007FC356 /* ic_singer_voice@2x.png in Resources */,
 				183CD47419E58B060036DD85 /* KSBasePopupView.xib in Resources */,
 				18845FB319ED600300E6E012 /* SNSongTableViewCell_Ipad.xib in Resources */,
 				183CD47C19E595580036DD85 /* appicon_120x120.png in Resources */,
@@ -563,6 +580,7 @@
 				1826284019E43ADA003DDE4E /* ic_filter_drop_down@2x.png in Resources */,
 				A4D3745C19C7EED80040A92F /* SNSearchSongViewController.xib in Resources */,
 				18BFA1DD19C8754A00DC63B5 /* TheLoaiBaiHat.plist in Resources */,
+				29650A171A85B87A007FC356 /* pause@2x.png in Resources */,
 				1826283C19E43265003DDE4E /* ic_filter_genre@2x.png in Resources */,
 				183CD46D19E58A040036DD85 /* menu_lyric@2x.png in Resources */,
 				A4B70E0519C91F460022DD1D /* SongNumber-Info.plist in Resources */,
@@ -575,10 +593,12 @@
 				18570B5019F5DD3D007ABC25 /* ic_delete_text@2x.png in Resources */,
 				A4D3748419C7F6840040A92F /* HTLyricsDetailViewController.xib in Resources */,
 				1826283D19E43265003DDE4E /* ic_filter_language@2x.png in Resources */,
+				29650A151A85B87A007FC356 /* icon_stop@2x.png in Resources */,
 				A40648C51A80ABF7005C8A84 /* SNScanQRCodeViewController.xib in Resources */,
 				A4D374A719C80BBF0040A92F /* vitek.sqlite in Resources */,
 				A4D374AB19C81FE00040A92F /* header_logo@2x.png in Resources */,
 				A4D374A219C7FBA40040A92F /* ic_midi@2x.png in Resources */,
+				29650A161A85B87A007FC356 /* next@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

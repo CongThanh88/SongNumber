@@ -480,6 +480,27 @@
     [self presentViewController:scanQRVC animated:YES completion:nil];
 }
 
+- (IBAction)btnStop:(id)sender {
+    [self sendRemoteControl:REMOTE_STOP andValue:-1];
+}
+
+- (IBAction)btnPause:(id)sender {
+    [self sendRemoteControl:REMOTE_PAUSE andValue:-1];
+}
+
+- (IBAction)btnPlay:(id)sender {
+    [self sendRemoteControl:REMOTE_PLAY andValue:-1];
+}
+
+- (IBAction)btnOnOffSingerVoice:(id)sender {
+    [self sendRemoteControl:REMOTE_SELECT_TRACK andValue:1];
+}
+
+- (IBAction)btnNext:(id)sender {
+    [self sendRemoteControl:REMOTE_NEXT andValue:-1];
+}
+
+
 #pragma mark - PopupViewDeleate - SNSongTableViewCellDelegate
 -(void)viewLyricSong:(SNSongModel*)song
 {
@@ -505,7 +526,7 @@
 {
     if (song) {
         //[self sendRemoteControl:REMOTE_RES songNumber:song.number];
-        [self sendRemoteControl:REMOTE_FAVORITE songNumber:song.number];
+        [self sendRemoteControl:REMOTE_FAVORITE andValue:[song.number intValue]];
     }
 }
 
@@ -550,17 +571,16 @@
     if (!_loadingView) {
         [self showLoading];
     }
-    [self sendRemoteControl:REMOTE_SONG_LIST songNumber:nil];
+    [self sendRemoteControl:REMOTE_SONG_LIST andValue:-1];
 }
 
 
--(void)sendRemoteControl:(REMOTE)remote songNumber:(NSString*)songNumber
+-(void)sendRemoteControl:(REMOTE)remote andValue:(int)value
 {
-    NSUInteger number = [songNumber integerValue];
     NSMutableData *remoteData = [NSMutableData dataWithBytes:&remote length:sizeof(remote)];
-    if (![NSString isStringEmpty:songNumber]) {
-        uint32_t tempValueId = CFSwapInt32HostToBig(number);
-        [remoteData appendData:[NSData dataWithBytes:&tempValueId length:sizeof(uint32_t)]];
+    if (value >=0 ) {
+        uint32_t tempValue = CFSwapInt32HostToBig(value);
+        [remoteData appendData:[NSData dataWithBytes:(&tempValue) length:sizeof(uint32_t)]];
     }
     [self performSelectorInBackground:@selector(sendData:) withObject:remoteData];
 }
@@ -689,7 +709,7 @@
 -(void)didScanQRCodeWithValue:(NSString *)stringValue
 {
 //    if (![NSString isStringEmpty:stringValue]) {
-        [self initNetworkCommunicationToHost:@"192.168.11.114" port:6789];//@"172.18.23.54"
+        [self initNetworkCommunicationToHost:@"192.168.0.105" port:6789];//@"172.18.23.54"
 //    }
 }
 @end

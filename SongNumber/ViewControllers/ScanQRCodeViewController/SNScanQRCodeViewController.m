@@ -145,7 +145,7 @@
 //    if (![NSString isStringEmpty:scanValue]) {
         SNSearchSongViewController *searchVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
         [self presentViewController:searchVC animated:YES completion:^{
-            [searchVC initNetworkCommunicationToHost:@"172.18.23.54" port:6789];
+            [searchVC initNetworkCommunicationToHost:@"192.168.0.105" port:6789];
         }];
 //    }
     

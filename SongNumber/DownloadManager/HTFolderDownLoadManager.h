@@ -27,10 +27,8 @@ typedef enum : NSUInteger {
 +(NSString*)createOfflineFolder;
 +(NSString*)createVideoFolder;
 +(NSString*)createRecodingFolder;
-+(NSString*)createFileRecordingWithSongName:(NSString*)musicName;
 +(BOOL)deleteAllFileOnline;
 +(BOOL)deleteAllFileVideoInDownloadFoler;
-+(BOOL)deleteAllFileInMyPhotoFolder;
 +(BOOL)deleteFile:(NSString*)filePath;
 +(BOOL)isExistFile:(NSString*)filePath;
 +(NSString*)getOnlineFilePathOfUrl:(NSString*)urlString;
@@ -38,6 +36,5 @@ typedef enum : NSUInteger {
 +(DownloadFileType)getTypeOfFile:(NSString*)file;
 +(BOOL)isExistFileOnlineForUrl:(NSString*)urlString;
 +(BOOL)isExistFileOfflineForUrl:(NSString*)urlString;
-+(NSMutableArray*)getAllFileInMyPhotosFolder;
 +(BOOL)isExistSong:(SNSongModel*)song;
 @end

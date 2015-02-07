@@ -25,5 +25,4 @@
 -(UIImage*)imageIconAtSettingIndex:(NSInteger)index;
 -(NSString*)titleAtIndex:(NSInteger)index;
 -(NSString*)titleForKey:(NSString*)key;
--(NSDictionary*)getDictionaryItemByFontName:(NSString*)fontName;
 @end

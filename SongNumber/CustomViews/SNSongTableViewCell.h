@@ -18,8 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblNhacSy;
 @property (weak, nonatomic) IBOutlet UILabel *lblShortLyric;
 @property (strong, nonatomic) SNSongModel *songModel;
-- (IBAction)btnViewLyric:(id)sender;
-- (IBAction)btnAddToFavorite:(id)sender;
+
 @property (weak, nonatomic) id<SNSongTableViewCellDelegate>delegate;
 -(void)setUpWithSong:(SNSongModel*)song;
 

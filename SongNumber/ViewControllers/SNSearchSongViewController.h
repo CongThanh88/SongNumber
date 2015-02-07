@@ -17,25 +17,27 @@
 
 #define PORT       2468
 
-typedef enum : NSUInteger {
-    REMOTE_PING = 0x00,
-    REMOTE_SONG_LIST = 0x01,
-    REMOTE_RES = 0x02,
-    REMOTE_1ST_RES = 0x03,
-    REMOTE_PLAY = 0x04,
-    REMOTE_PAUSE = 0x05,
-    REMOTE_STOP = 0x06,
-    REMOTE_NEXT = 0x07,
-    REMOTE_SELECT = 0x08,
-    REMOTE_FAVORITE = 0x09,
-    REMOTE_UNFAVORITE = 0x0A,
-    REMOTE_QUEUE_MOVE_UP = 0x0B,
-    REMOTE_QUEUE_MOVE_FIRST = 0x0C,
-    REMOTE_QUEUE_MOVE = 0x0D,
-    REMOTE_QUEUE_LIST = 0x0E,
-    REMOTE_DISCONNECT = 0x0F,
-    REMOTE_VOLUME_UP = 0x10,
-    REMOTE_VOLUME_DOWN = 0x11
+typedef enum : unsigned char {
+    REMOTE_PING = 0,
+    REMOTE_SONG_LIST = 1,
+    REMOTE_RES = 2,
+    REMOTE_1ST_RES = 3,
+    REMOTE_PLAY = 4,
+    REMOTE_PAUSE = 5,
+    REMOTE_STOP = 6,
+    REMOTE_NEXT = 7,
+    REMOTE_SELECT_TRACK = 8,
+    REMOTE_FAVORITE = 9,
+    REMOTE_UNFAVORITE = 10,
+    REMOTE_QUEUE_MOVE_UP = 11,
+    REMOTE_QUEUE_MOVE_FIRST = 12,
+    REMOTE_QUEUE_REMOVE = 13,
+    REMOTE_QUEUE_LIST = 14,
+    REMOTE_DISCONNECT = 15,
+    REMOTE_VOLUME_UP = 16,
+    REMOTE_VOLUME_DOWN = 17,
+    REMOTE_MESSAGE = 18,
+    REMOTE_SCORING = 19
 } REMOTE;
 
 @interface SNSearchSongViewController : UIViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, SelectBoxDelegate, PopupViewDelegate, SNSongTableViewCellDelegate, NSStreamDelegate, ScanQRCodeViewControllerDelegate>
@@ -63,6 +65,15 @@ typedef enum : NSUInteger {
 - (IBAction)btnFavorite:(id)sender;
 - (IBAction)btnNew:(id)sender;
 - (IBAction)btnScanCode:(id)sender;
+- (IBAction)btnStop:(id)sender;
+- (IBAction)btnPause:(id)sender;
+- (IBAction)btnPlay:(id)sender;
+- (IBAction)btnOnOffSingerVoice:(id)sender;
+
+@property (weak, nonatomic) IBOutlet SNToggleButton *btnNext;
+
+
+
 
 - (void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port;
 @end
