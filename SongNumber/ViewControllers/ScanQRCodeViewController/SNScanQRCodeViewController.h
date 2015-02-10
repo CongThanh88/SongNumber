@@ -8,19 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "SNBaseViewController.h"
 
-@protocol ScanQRCodeViewControllerDelegate <NSObject>
-
--(void)didScanQRCodeWithValue:(NSString*)stringValue;
-
-@end
-
-@interface SNScanQRCodeViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+@interface SNScanQRCodeViewController : SNBaseViewController<AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *previewCapture;
-@property (weak, nonatomic) IBOutlet UILabel *lblScanValue;
 
-@property (weak, nonatomic) id<ScanQRCodeViewControllerDelegate> delegate;
-
-- (IBAction)btnOk:(id)sender;
+- (IBAction)btnScanQRCode:(id)sender;
+- (IBAction)btnConnect:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txtIpAddress;
 
 @end

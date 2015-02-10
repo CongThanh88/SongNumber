@@ -14,8 +14,9 @@
                 <outlet property="btnNew" destination="Pvp-zG-bj5" id="e2c-ns-4xe"/>
                 <outlet property="btnNext" destination="5gr-Ow-yYa" id="4LA-kj-q4K"/>
                 <outlet property="btnNgonNgu" destination="8t1-eZ-hhb" id="v5A-Tq-G73"/>
+                <outlet property="btnSingerVoice" destination="Gtc-Gh-ihE" id="tZo-g3-X2J"/>
                 <outlet property="btnSort" destination="2mF-1D-EDo" id="RtT-in-GEc"/>
-                <outlet property="btnStop" destination="mK0-Y1-7k4" id="ONc-Vk-dhL"/>
+                <outlet property="btnStop" destination="mK0-Y1-7k4" id="nV8-Hi-Jk9"/>
                 <outlet property="btnTheLoai" destination="KLa-5x-G7f" id="7bO-4x-dj6"/>
                 <outlet property="tableView" destination="zZS-p1-C2y" id="W0j-Zb-hei"/>
                 <outlet property="txtSearchField" destination="WNn-50-hdA" id="aLb-sI-l26"/>
@@ -66,15 +67,6 @@
                                 <constraint firstAttribute="trailing" secondItem="p5f-ff-gCI" secondAttribute="trailing" constant="4" id="YOC-QP-4ls"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DP4-7e-4XP">
-                            <rect key="frame" x="12" y="2" width="73" height="30"/>
-                            <state key="normal">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnScanCode:" destination="-1" eventType="touchUpInside" id="S5W-Hb-ekr"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.66863029230000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -90,16 +82,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIq-8I-SE5">
                     <rect key="frame" x="0.0" y="36" width="320" height="443"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zZS-p1-C2y">
-                            <rect key="frame" x="0.0" y="34" width="320" height="330"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SH-vhf">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLa-5x-G7f" customClass="SNSelectBoxView">
-                                    <rect key="frame" x="115" y="6" width="89" height="24"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLa-5x-G7f" customClass="SNSelectBoxView">
+                                    <rect key="frame" x="107" y="6" width="106" height="24"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="xcy-2C-LRj"/>
@@ -114,14 +101,13 @@
                                         <action selector="btnTheLoai:" destination="-1" eventType="touchUpInside" id="7ck-Vo-0tO"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mF-1D-EDo" customClass="SNSelectBoxView">
-                                    <rect key="frame" x="201" y="6" width="119" height="24"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mF-1D-EDo" customClass="SNSelectBoxView">
+                                    <rect key="frame" x="214" y="6" width="106" height="24"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="JnF-TK-Sti"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <inset key="contentEdgeInsets" minX="-14" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="Tất cả" image="ic_filter_sort.png">
                                         <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -131,14 +117,13 @@
                                         <action selector="btnSort:" destination="-1" eventType="touchUpInside" id="1Rz-Ju-Pp7"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8t1-eZ-hhb" customClass="SNSelectBoxView">
-                                    <rect key="frame" x="0.0" y="6" width="107" height="24"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8t1-eZ-hhb" customClass="SNSelectBoxView">
+                                    <rect key="frame" x="0.0" y="6" width="106" height="24"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="kgf-kE-9Db"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <inset key="contentEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="Tiếng Việt" image="ic_filter_language.png">
                                         <color key="titleColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,15 +133,24 @@
                                         <action selector="btnNgonNgu:" destination="-1" eventType="touchUpInside" id="t6w-5V-8AQ"/>
                                     </connections>
                                 </button>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zZS-p1-C2y">
+                                    <rect key="frame" x="0.0" y="35" width="320" height="330"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="zZS-p1-C2y" secondAttribute="trailing" id="35b-Wr-sCd"/>
                                 <constraint firstItem="KLa-5x-G7f" firstAttribute="width" secondItem="2mF-1D-EDo" secondAttribute="width" id="7Js-tw-w1O"/>
+                                <constraint firstAttribute="bottom" secondItem="zZS-p1-C2y" secondAttribute="bottom" constant="1" id="7ha-0j-oF5"/>
                                 <constraint firstItem="8t1-eZ-hhb" firstAttribute="leading" secondItem="x0v-SH-vhf" secondAttribute="leading" id="8l8-Y7-l3x"/>
+                                <constraint firstItem="zZS-p1-C2y" firstAttribute="leading" secondItem="x0v-SH-vhf" secondAttribute="leading" id="BUh-BS-ycr"/>
                                 <constraint firstAttribute="centerX" secondItem="KLa-5x-G7f" secondAttribute="centerX" id="EF0-6J-Ng9"/>
+                                <constraint firstItem="zZS-p1-C2y" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="35" id="IdK-iC-yxh"/>
                                 <constraint firstItem="2mF-1D-EDo" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="6" id="M2f-7A-HAD"/>
                                 <constraint firstItem="KLa-5x-G7f" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="6" id="Myi-Dn-aPd"/>
-                                <constraint firstAttribute="height" constant="35" id="Zpk-hG-niM"/>
+                                <constraint firstItem="2mF-1D-EDo" firstAttribute="leading" secondItem="KLa-5x-G7f" secondAttribute="trailing" constant="1" id="dPw-0O-Gim"/>
                                 <constraint firstItem="2mF-1D-EDo" firstAttribute="width" secondItem="8t1-eZ-hhb" secondAttribute="width" id="mTT-Gb-eLY"/>
                                 <constraint firstItem="8t1-eZ-hhb" firstAttribute="top" secondItem="x0v-SH-vhf" secondAttribute="top" constant="6" id="xk3-1C-n9P"/>
                                 <constraint firstAttribute="trailing" secondItem="2mF-1D-EDo" secondAttribute="trailing" id="ynq-or-y5r"/>
@@ -257,13 +251,12 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnFree:" destination="-1" eventType="touchUpInside" id="lqD-we-YRO"/>
                                         <action selector="btnPaues:" destination="-1" eventType="touchUpInside" id="oeC-j9-s1Q"/>
-                                        <action selector="btnPause:" destination="-1" eventType="touchUpInside" id="myY-BI-0d9"/>
+                                        <action selector="btnPause:" destination="-1" eventType="touchUpInside" id="RPO-FA-iUZ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVI-U5-qh1" customClass="SNToggleButton">
-                                    <rect key="frame" x="103" y="2" width="54" height="46"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVI-U5-qh1" customClass="SNToggleButton">
+                                    <rect key="frame" x="103" y="1" width="54" height="46"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="46" id="HsF-4a-gji"/>
                                         <constraint firstAttribute="width" constant="54" id="PWf-aS-Cn0"/>
@@ -274,13 +267,11 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnFavorite:" destination="-1" eventType="touchUpInside" id="7gP-jx-tyG"/>
-                                        <action selector="btnNext:" destination="-1" eventType="touchUpInside" id="nGy-jm-NQr"/>
                                         <action selector="btnPlay:" destination="-1" eventType="touchUpInside" id="d9m-Ul-pZg"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
-                                    <rect key="frame" x="154" y="0.0" width="52" height="46.5"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
+                                    <rect key="frame" x="154" y="1" width="52" height="46.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="52" id="BJc-Ww-mlR"/>
                                         <constraint firstAttribute="height" constant="46" id="HKL-aW-gKF"/>
@@ -291,7 +282,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnNew:" destination="-1" eventType="touchUpInside" id="0vB-ai-wtT"/>
+                                        <action selector="btnNext:" destination="-1" eventType="touchUpInside" id="CEv-A5-ntQ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mK0-Y1-7k4" customClass="SNToggleButton">
@@ -306,8 +297,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnAll:" destination="-1" eventType="touchUpInside" id="8Ev-BO-ktT"/>
-                                        <action selector="btnStop:" destination="-1" eventType="touchDragInside" id="vE8-rN-2CS"/>
+                                        <action selector="btnStop:" destination="-1" eventType="touchUpInside" id="V7f-2T-o2V"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtc-Gh-ihE">
@@ -344,17 +334,14 @@
                     <color key="backgroundColor" red="0.23137254900000001" green="0.35294117650000001" blue="0.64313725489999995" alpha="0.25" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ZfP-t0-tDz" secondAttribute="trailing" id="3LN-Wc-Xqf"/>
-                        <constraint firstAttribute="bottom" secondItem="zZS-p1-C2y" secondAttribute="bottom" constant="79" id="3bm-s3-iX6"/>
+                        <constraint firstAttribute="trailing" secondItem="x0v-SH-vhf" secondAttribute="trailing" id="4XQ-fL-DT5"/>
                         <constraint firstAttribute="trailing" secondItem="4fW-ny-Mho" secondAttribute="trailing" id="7LP-zY-gkM"/>
+                        <constraint firstAttribute="bottom" secondItem="x0v-SH-vhf" secondAttribute="bottom" constant="77" id="Bdr-fR-3Qf"/>
+                        <constraint firstItem="x0v-SH-vhf" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="Gde-R1-UbE"/>
                         <constraint firstItem="ZfP-t0-tDz" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="JwQ-dS-7R2"/>
-                        <constraint firstAttribute="trailing" secondItem="zZS-p1-C2y" secondAttribute="trailing" id="OYt-Iq-gDh"/>
-                        <constraint firstItem="x0v-SH-vhf" firstAttribute="top" secondItem="yIq-8I-SE5" secondAttribute="top" id="Qam-pv-iX5"/>
-                        <constraint firstAttribute="trailing" secondItem="x0v-SH-vhf" secondAttribute="trailing" id="Tp6-Pf-HbX"/>
                         <constraint firstAttribute="bottom" secondItem="4fW-ny-Mho" secondAttribute="bottom" constant="43" id="XtV-t2-3jU"/>
-                        <constraint firstItem="zZS-p1-C2y" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="Xvb-yo-YWe"/>
                         <constraint firstAttribute="bottom" secondItem="ZfP-t0-tDz" secondAttribute="bottom" id="eUo-Jm-mhn"/>
-                        <constraint firstItem="x0v-SH-vhf" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="fm3-x4-Kjy"/>
-                        <constraint firstItem="zZS-p1-C2y" firstAttribute="top" secondItem="yIq-8I-SE5" secondAttribute="top" constant="34" id="rzb-UU-o5E"/>
+                        <constraint firstItem="x0v-SH-vhf" firstAttribute="top" secondItem="yIq-8I-SE5" secondAttribute="top" id="nRq-8W-a8r"/>
                         <constraint firstItem="4fW-ny-Mho" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="zo8-9h-QOL"/>
                     </constraints>
                 </view>

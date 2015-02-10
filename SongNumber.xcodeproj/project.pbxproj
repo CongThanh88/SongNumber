@@ -33,6 +33,7 @@
 		299768091A83B5B2002920F6 /* SNStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 299768081A83B5B2002920F6 /* SNStreamUtil.m */; };
 		2997680D1A83C925002920F6 /* SNRemoteSongsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2997680C1A83C925002920F6 /* SNRemoteSongsManager.m */; };
 		299768121A83D158002920F6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 299768111A83D158002920F6 /* MBProgressHUD.m */; };
+		29B630B51A88F5C3001440B0 /* SNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B630B41A88F5C3001440B0 /* SNBaseViewController.m */; };
 		A40648C41A80ABF7005C8A84 /* SNScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40648C21A80ABF7005C8A84 /* SNScanQRCodeViewController.m */; };
 		A40648C51A80ABF7005C8A84 /* SNScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40648C31A80ABF7005C8A84 /* SNScanQRCodeViewController.xib */; };
 		A4B70E0519C91F460022DD1D /* SongNumber-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B70E0419C91F460022DD1D /* SongNumber-Info.plist */; };
@@ -122,6 +123,8 @@
 		2997680C1A83C925002920F6 /* SNRemoteSongsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNRemoteSongsManager.m; path = RemoteSongsManager/SNRemoteSongsManager.m; sourceTree = "<group>"; };
 		299768101A83D158002920F6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		299768111A83D158002920F6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		29B630B31A88F5C3001440B0 /* SNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBaseViewController.h; sourceTree = "<group>"; };
+		29B630B41A88F5C3001440B0 /* SNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBaseViewController.m; sourceTree = "<group>"; };
 		A40648C11A80ABF7005C8A84 /* SNScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNScanQRCodeViewController.h; path = ScanQRCodeViewController/SNScanQRCodeViewController.h; sourceTree = "<group>"; };
 		A40648C21A80ABF7005C8A84 /* SNScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNScanQRCodeViewController.m; path = ScanQRCodeViewController/SNScanQRCodeViewController.m; sourceTree = "<group>"; };
 		A40648C31A80ABF7005C8A84 /* SNScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SNScanQRCodeViewController.xib; path = ScanQRCodeViewController/SNScanQRCodeViewController.xib; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				A4D3745719C7EED80040A92F /* SNSearchSongViewController.h */,
 				A4D3745819C7EED80040A92F /* SNSearchSongViewController.m */,
 				A4D3745919C7EED80040A92F /* SNSearchSongViewController.xib */,
+				29B630B31A88F5C3001440B0 /* SNBaseViewController.h */,
+				29B630B41A88F5C3001440B0 /* SNBaseViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				A4D3743119C7EE490040A92F /* main.m in Sources */,
 				A4D3746119C7EF6C0040A92F /* SNSongTableViewCell.m in Sources */,
 				A40648C41A80ABF7005C8A84 /* SNScanQRCodeViewController.m in Sources */,
+				29B630B51A88F5C3001440B0 /* SNBaseViewController.m in Sources */,
 				A4D3747319C7F1E70040A92F /* NSString+Addition.m in Sources */,
 				2997680D1A83C925002920F6 /* SNRemoteSongsManager.m in Sources */,
 				A4D3747419C7F1E70040A92F /* HTLocalizeHelper.m in Sources */,

@@ -9,6 +9,7 @@
 #import "SNScanQRCodeViewController.h"
 #import "SNSearchSongViewController.h"
 #import "NSString+Addition.h"
+#import "SNRemoteSongsManager.h"
 
 
 @interface SNScanQRCodeViewController ()
@@ -23,6 +24,7 @@
 
 @implementation SNScanQRCodeViewController
 {
+    SNRemoteSongsManager *remoteSongManager;
     NSString *scanValue;
 }
 
@@ -38,8 +40,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self startReading];
+    remoteSongManager = [SNRemoteSongsManager sharedInstance];
+    __weak typeof(SNScanQRCodeViewController) *weakSelf = self;
+    __weak typeof(SNRemoteSongsManager) *weakRemoteSong = remoteSongManager;
+    [remoteSongManager setRequestListSongsCompleted:^{
+        [weakSelf hideLoading];
+        SNSearchSongViewController *searchSongVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
+        [weakSelf presentViewController:searchSongVC animated:YES completion:nil];
+    }];
+    
+    [remoteSongManager setConnectCompleted:^(BOOL success, NSError *error) {
+        if (success && !error) {
+            [weakRemoteSong performSelector:@selector(requestGetListSong) withObject:nil afterDelay:2];
+        }else{
+            [weakSelf hideLoading];
+            [weakSelf showNotifyView:[NSString stringWithFormat:@"Lỗi kết nối: %@",error] complete:nil];
+        }
+    }];
 }
 
 - (BOOL)startReading {
@@ -96,8 +113,7 @@
     // Remove the video preview layer from the viewPreview view's layer.
     [_videoPreviewLayer removeFromSuperlayer];
     
-    _lblScanValue.hidden = NO;
-    _lblScanValue.text = scanValue;
+    _txtIpAddress.text = scanValue;
 }
 
 
@@ -127,7 +143,6 @@
         }
     }
     
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,18 +151,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnOk:(id)sender {
-//    if (_delegate && [_delegate respondsToSelector:@selector(didScanQRCodeWithValue:)]) {//scanValue
-//        [_delegate didScanQRCodeWithValue:scanValue];
-//    }
-//    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    if (![NSString isStringEmpty:scanValue]) {
-        SNSearchSongViewController *searchVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
-        [self presentViewController:searchVC animated:YES completion:^{
-            [searchVC initNetworkCommunicationToHost:@"192.168.0.105" port:6789];
-        }];
-//    }
-    
+-(void)hideKeyboard
+{
+    if (_txtIpAddress.isEditing) {
+        [_txtIpAddress endEditing:YES];
+    }
+}
+- (IBAction)btnScanQRCode:(id)sender {
+    [self hideLoading];
+    [self startReading];
+}
+
+- (IBAction)btnConnect:(id)sender {
+    if (![NSString isStringEmpty:_txtIpAddress.text]) {
+        [self hideKeyboard];
+        [self showLoading];
+        [remoteSongManager initNetworkCommunicationToHost:_txtIpAddress.text port:PORT];
+    }
 }
 @end

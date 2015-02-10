@@ -7,7 +7,7 @@
 //
 
 #import "SNAppDelegate.h"
-//#import "SNSearchSongViewController.h"
+#import "SNRemoteSongsManager.h"
 #import "SNScanQRCodeViewController.h"
 
 @implementation SNAppDelegate
@@ -50,6 +50,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [[SNRemoteSongsManager sharedInstance] sendRemoteControl:REMOTE_DISCONNECT andValue:-1];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

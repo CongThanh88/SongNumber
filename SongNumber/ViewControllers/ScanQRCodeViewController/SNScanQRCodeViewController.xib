@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SNScanQRCodeViewController">
             <connections>
-                <outlet property="lblScanValue" destination="qqt-Bp-Qx7" id="Khl-la-gQG"/>
                 <outlet property="previewCapture" destination="mNa-j2-WXl" id="GaL-Om-EFE"/>
+                <outlet property="txtIpAddress" destination="jcB-cY-BMy" id="K4J-1l-HV6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,75 +17,90 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-j2-WXl">
-                    <rect key="frame" x="0.0" y="36" width="320" height="485"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqt-Bp-Qx7">
-                            <rect key="frame" x="31" y="123" width="259" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="WvA-4k-Qk9"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="qqt-Bp-Qx7" firstAttribute="top" secondItem="mNa-j2-WXl" secondAttribute="top" constant="123" id="7Cj-c7-N6Q"/>
-                        <constraint firstAttribute="trailing" secondItem="qqt-Bp-Qx7" secondAttribute="trailing" constant="30" id="Qe8-4z-qp8"/>
-                        <constraint firstItem="qqt-Bp-Qx7" firstAttribute="leading" secondItem="mNa-j2-WXl" secondAttribute="leading" constant="31" id="wYQ-XH-1sM"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpR-5w-ZVt">
-                    <rect key="frame" x="0.0" y="529" width="320" height="39"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.55805200730000004" blue="0.078695255470000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="39" id="E8M-sg-MbW"/>
-                    </constraints>
-                    <state key="normal" title="Ok">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnOk:" destination="-1" eventType="touchUpInside" id="qZj-FM-wGd"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWu-qJ-iyf">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vdg-Gc-c8n">
                             <rect key="frame" x="12" y="2" width="78" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.66863029230000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="MkM-sS-Dum"/>
                         <constraint firstAttribute="height" constant="36" id="WP1-g7-zQw"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-j2-WXl">
+                    <rect key="frame" x="0.0" y="208" width="320" height="360"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpR-5w-ZVt">
+                    <rect key="frame" x="15" y="150" width="290" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="E8M-sg-MbW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Kết nối">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnConnect:" destination="-1" eventType="touchUpInside" id="uOT-GN-vNK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOD-9U-cIp">
+                    <rect key="frame" x="15" y="100" width="290" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="8lN-Kk-4dJ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="TpC-i9-Wy7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Quét QR-Code">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnScanQRCode:" destination="-1" eventType="touchUpInside" id="DwB-ka-5V8"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcB-cY-BMy">
+                    <rect key="frame" x="15" y="51" width="290" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="mNa-j2-WXl" firstAttribute="leading" secondItem="hpR-5w-ZVt" secondAttribute="leading" id="9Mk-vs-ggW"/>
+                <constraint firstAttribute="trailing" secondItem="jcB-cY-BMy" secondAttribute="trailing" constant="15" id="0UH-S4-ADz"/>
                 <constraint firstItem="FWu-qJ-iyf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CUK-QY-080"/>
-                <constraint firstAttribute="trailing" secondItem="hpR-5w-ZVt" secondAttribute="trailing" id="EBn-5r-NqX"/>
-                <constraint firstItem="hpR-5w-ZVt" firstAttribute="top" secondItem="mNa-j2-WXl" secondAttribute="bottom" constant="8" symbolic="YES" id="GD8-sT-Zr1"/>
-                <constraint firstItem="mNa-j2-WXl" firstAttribute="leading" secondItem="FWu-qJ-iyf" secondAttribute="leading" id="MI9-TS-V81"/>
-                <constraint firstAttribute="bottom" secondItem="hpR-5w-ZVt" secondAttribute="bottom" id="Mi2-JS-c90"/>
-                <constraint firstItem="hpR-5w-ZVt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eLX-3h-9HL"/>
-                <constraint firstItem="mNa-j2-WXl" firstAttribute="trailing" secondItem="FWu-qJ-iyf" secondAttribute="trailing" id="lT3-of-Moh"/>
-                <constraint firstItem="mNa-j2-WXl" firstAttribute="trailing" secondItem="hpR-5w-ZVt" secondAttribute="trailing" id="pgb-lp-i6D"/>
-                <constraint firstItem="mNa-j2-WXl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="sQC-nc-FEY"/>
+                <constraint firstItem="yOD-9U-cIp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Fid-6q-xVL"/>
+                <constraint firstItem="hpR-5w-ZVt" firstAttribute="top" secondItem="yOD-9U-cIp" secondAttribute="bottom" constant="10" id="HtV-Gu-ozB"/>
+                <constraint firstItem="FWu-qJ-iyf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IBd-6N-8F0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yOD-9U-cIp" secondAttribute="trailing" constant="15" id="KI1-VO-2sp"/>
+                <constraint firstItem="jcB-cY-BMy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="OgJ-1f-00C"/>
+                <constraint firstAttribute="bottom" secondItem="mNa-j2-WXl" secondAttribute="bottom" id="ShE-DC-2bA"/>
+                <constraint firstAttribute="trailing" secondItem="yOD-9U-cIp" secondAttribute="trailing" constant="15" id="Uba-uO-4Um"/>
+                <constraint firstItem="mNa-j2-WXl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V3x-xV-UYx"/>
+                <constraint firstAttribute="trailing" secondItem="FWu-qJ-iyf" secondAttribute="trailing" id="V7t-3d-Vyg"/>
+                <constraint firstItem="hpR-5w-ZVt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="W9f-CX-JYw"/>
+                <constraint firstItem="yOD-9U-cIp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Wcf-Jq-xnR"/>
+                <constraint firstItem="jcB-cY-BMy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="51" id="Xhy-Xt-hwt"/>
+                <constraint firstAttribute="trailing" secondItem="mNa-j2-WXl" secondAttribute="trailing" id="agU-1R-sKZ"/>
+                <constraint firstAttribute="trailing" secondItem="hpR-5w-ZVt" secondAttribute="trailing" constant="15" id="imi-U6-xZi"/>
+                <constraint firstItem="mNa-j2-WXl" firstAttribute="top" secondItem="hpR-5w-ZVt" secondAttribute="bottom" constant="18" id="rGG-Ky-ZXU"/>
+                <constraint firstItem="FWu-qJ-iyf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="u8t-1r-SsS"/>
+                <constraint firstItem="yOD-9U-cIp" firstAttribute="top" secondItem="jcB-cY-BMy" secondAttribute="bottom" constant="19" id="wmt-go-CGy"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
         <image name="header_logo.png" width="74" height="29"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

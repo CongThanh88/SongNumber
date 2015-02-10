@@ -121,7 +121,7 @@
         NSArray *listSong = [[NSArray alloc]init];
         int i=0;
         for (NSString *songResponse in listString) {
-            if (songResponse && i<100) {
+            if (songResponse && i<10000) {
                 i++;
                 SNSongModel *newSong = [SNSongModel parseSongFromResponseString:songResponse];
                 if (newSong) {
