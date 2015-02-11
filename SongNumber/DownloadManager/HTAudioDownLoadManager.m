@@ -32,7 +32,6 @@
 
 -(void)downloadFile:(NSString*)urlString online:(BOOL)isOnline complete:(void(^)(NSString *filePath, NSError *error))complete
 {
-    NSLog(@"start download :%@",urlString);
     if ([NSString isStringEmpty:urlString]) {
         _isDownloading = NO;
         if (complete) {
@@ -131,7 +130,6 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"downloading fail:%@",_outPutFilePath);
     if (![NSString isStringEmpty:_outPutFilePath]) {
         [HTFolderDownLoadManager deleteFile:_outPutFilePath];
     }
@@ -177,7 +175,6 @@
                             } else {
                                 buf[i] += 1;
                             }
-                            // NSLog(@"Returning byte %d  : %x", i, buf[i]);
                         }
                         [_oStream write:(const uint8_t *)buf maxLength:len];
                     }
@@ -193,7 +190,6 @@
             //Update the isDownloading flag
             _isDownloading = NO;
             //call back block
-            NSLog(@"end download %@",_outPutFilePath);
             if (_downLoadFileComplete) {
                 _downLoadFileComplete(_outPutFilePath,nil);
             }

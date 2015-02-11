@@ -69,7 +69,6 @@
     
     if (!input) {
         // If any error occurs, simply log the description of it and don't continue any more.
-        NSLog(@"%@", [error localizedDescription]);
         return NO;
     }
     

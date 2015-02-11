@@ -73,9 +73,7 @@
             listLine = [[NSArray alloc]init];
             HTLineContent *result = [[HTLineContent alloc]init];
             NSArray *lineContents = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            if (lineContents && lineContents.count>0) {
-                NSLog(@"start 1");
-                for (int i=0; i<lineContents.count; i++ ) {
+            if (lineContents && lineContents.count>0) {                for (int i=0; i<lineContents.count; i++ ) {
                     NSString *contentOfLine = [lineContents objectAtIndex:i];
                     if(![NSString isStringEmpty:contentOfLine] && [contentOfLine hasPrefix:@"["]){
                         HTLineContent *lineOfParagraph = [HTLineContent parseWordsOfLine:contentOfLine];
@@ -83,7 +81,6 @@
                         listLine = [listLine arrayByAddingObject:lineOfParagraph];
                     }
                 }
-                 NSLog(@"end 1");
                 
                 //Update endtime of the last word of  the lines
                 for (int i=0; i<listLine.count; i++) {
@@ -97,7 +94,6 @@
                                 startWord.endTime = endWord.startTime;
                                 //Check if the line is end of paragraph
                                 if(startWord.endTime - startWord.startTime > 15000){
-                                    NSLog(@"paragraph startLine: %@",endLine.lineContent);
                                     startWord.endTime = startWord.startTime + 20;
                                     startWord.isEndOfParagraph = YES;
                                     endLine.isStartParagraph = YES;
@@ -133,7 +129,6 @@
                     }
                   
                 }
-                 NSLog(@"end 2");
                 
                 GenderType genderType = None_Type;
                 //Update endtime of the line
@@ -160,7 +155,6 @@
                         
                     }
                 }
-                 NSLog(@"end 3");
                 
             }
             lyricManager.listLineLyric = listLine;

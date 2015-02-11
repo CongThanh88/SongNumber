@@ -95,10 +95,8 @@
 
 -(void)sendData:(NSData*)data
 {
-    NSLog(@"sendData");
     if (data && outputStream && [outputStream hasSpaceAvailable]) {
         NSUInteger byteswrote = [outputStream write:[data bytes] maxLength:[data length]];
-        NSLog(@"%lu",(unsigned long)byteswrote);
     }
 }
 
