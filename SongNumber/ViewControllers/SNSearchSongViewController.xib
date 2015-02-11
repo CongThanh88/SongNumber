@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -14,6 +14,8 @@
                 <outlet property="btnNew" destination="Pvp-zG-bj5" id="e2c-ns-4xe"/>
                 <outlet property="btnNext" destination="5gr-Ow-yYa" id="4LA-kj-q4K"/>
                 <outlet property="btnNgonNgu" destination="8t1-eZ-hhb" id="v5A-Tq-G73"/>
+                <outlet property="btnPause" destination="ckX-s0-Ku2" id="Acw-jw-ZCC"/>
+                <outlet property="btnPlay" destination="TVI-U5-qh1" id="1cy-i3-8wW"/>
                 <outlet property="btnSingerVoice" destination="Gtc-Gh-ihE" id="tZo-g3-X2J"/>
                 <outlet property="btnSort" destination="2mF-1D-EDo" id="RtT-in-GEc"/>
                 <outlet property="btnStop" destination="mK0-Y1-7k4" id="nV8-Hi-Jk9"/>
@@ -251,7 +253,6 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnPaues:" destination="-1" eventType="touchUpInside" id="oeC-j9-s1Q"/>
                                         <action selector="btnPause:" destination="-1" eventType="touchUpInside" id="RPO-FA-iUZ"/>
                                     </connections>
                                 </button>
@@ -270,8 +271,8 @@
                                         <action selector="btnPlay:" destination="-1" eventType="touchUpInside" id="d9m-Ul-pZg"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
-                                    <rect key="frame" x="154" y="1" width="52" height="46.5"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
+                                    <rect key="frame" x="154" y="1" width="52" height="47"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="52" id="BJc-Ww-mlR"/>
                                         <constraint firstAttribute="height" constant="46" id="HKL-aW-gKF"/>
@@ -301,7 +302,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtc-Gh-ihE">
-                                    <rect key="frame" x="214" y="0.0" width="56" height="46.5"/>
+                                    <rect key="frame" x="214" y="0.0" width="56" height="47"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="56" id="4di-Vc-Icn"/>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="DiH-R3-t37"/>

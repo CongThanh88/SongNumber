@@ -33,7 +33,7 @@
     SNSettingManager *setting;
     KSBasePopupView *popupView;
     SNRemoteSongsManager *remoteSongManager;
-
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -106,7 +106,7 @@
     _tableView.delegate = self;
     _tableView.separatorColor = [UIColor redColor];
     [_tableView reloadData];
-
+    
     
     //The loai
     _btnTheLoai.tableWidth = _btnTheLoai.frame.size.width;;
@@ -207,7 +207,6 @@
     }
     if (![NSString isStringEmpty:query]) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:query];
-        //listSongs = [[HTDatabaseHelper sharedInstance] querySongs:query];
         listSongs = [_listSongsFull filteredArrayUsingPredicate:predicate];
     }else{
         listSongs = _listSongsFull;
@@ -348,7 +347,7 @@
     if (_btnAll.isSelected) {
         _btnAll.isSelected = NO;
     }
-
+    
 }
 
 -(int)getTypeSong
@@ -422,10 +421,10 @@
 - (IBAction)btnOnOffSingerVoice:(id)sender {
     if (_btnSingerVoice.isSelected) {
         _btnSingerVoice.selected = NO;
-        [remoteSongManager sendRemoteControl:REMOTE_SELECT_TRACK andValue:0];
+        [remoteSongManager sendRemoteControl:REMOTE_SELECT_TRACK andValue:-1];
     }else{
         _btnSingerVoice.selected = YES;
-        [remoteSongManager sendRemoteControl:REMOTE_SELECT_TRACK andValue:1];
+        [remoteSongManager sendRemoteControl:REMOTE_SELECT_TRACK andValue:-1];
     }
 }
 
@@ -443,25 +442,17 @@
 }
 
 -(void)addToFavorite:(SNSongModel*)song{
-//    if (song) {
-//        [[HTDatabaseHelper sharedInstance] updateSongFavorite:song];
-//    }
-//    if (_btnFavorite.isSelected) {
-//        [self reloadSong];
-//    }
     if (song && !song.is_favorite) {
         [remoteSongManager sendRemoteControl:REMOTE_FAVORITE andValue:[song.number intValue]];
     }else if(song){
         [remoteSongManager sendRemoteControl:REMOTE_UNFAVORITE andValue:[song.number intValue]];
     }
-    
 }
 
 -(void)addToQueue:(SNSongModel *)song
 {
     if (song) {
-        //[self sendRemoteControl:REMOTE_RES songNumber:song.number];
-        [remoteSongManager sendRemoteControl:REMOTE_FAVORITE andValue:[song.number intValue]];
+        [remoteSongManager sendRemoteControl:REMOTE_RES andValue:[song.number intValue]];
     }
 }
 
@@ -484,11 +475,9 @@
     _tableView.frame = tableFrame;
 }
 
-
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 }
-
 
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Foundation/NSStream.h>
 
-#define PORT       6789
+#define PORT 2468
 
 typedef enum : unsigned char {
     REMOTE_PING = 0,
@@ -41,7 +41,7 @@ typedef enum : unsigned char {
 @property(nonatomic, strong) void(^connectCompleted)(BOOL success, NSError *error);
 
 +(instancetype)sharedInstance;
-- (void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port;
+-(void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port;
 -(void)parseListSongFromString:(NSString*)resultString;
 -(void)requestGetListSong;
 -(void)sendRemoteControl:(REMOTE)remote andValue:(int)value;

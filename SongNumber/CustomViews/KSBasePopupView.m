@@ -112,7 +112,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)closePopup
@@ -127,7 +126,7 @@
     CGPoint touchLocation = [touch locationInView:self.view];
     
     if (!CGRectContainsPoint(self.popupView.frame, touchLocation)) {
-         [self removeAnimate];
+        [self removeAnimate];
     }
 }
 

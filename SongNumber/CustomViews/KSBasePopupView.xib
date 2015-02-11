@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -21,6 +21,23 @@
                     <rect key="frame" x="44" y="224" width="232" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LfB-4p-8vk">
+                            <rect key="frame" x="10" y="6" width="214" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Thêm vào danh sách chờ">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAddToQueue:" destination="-1" eventType="touchUpInside" id="kzz-7C-1vH"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" id="Luv-6U-bAA">
+                            <rect key="frame" x="0.0" y="40" width="232" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9wQ-ZD-NAn">
                             <rect key="frame" x="13" y="42" width="214" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,8 +51,8 @@
                                 <action selector="btnViewLyric:" destination="-1" eventType="touchUpInside" id="uSd-61-Ox9"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" id="Luv-6U-bAA">
-                            <rect key="frame" x="0.0" y="40" width="232" height="1"/>
+                        <view contentMode="scaleToFill" id="J9M-7i-erf">
+                            <rect key="frame" x="0.0" y="79" width="232" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -50,23 +67,6 @@
                             </state>
                             <connections>
                                 <action selector="btnAddToFavorite:" destination="-1" eventType="touchUpInside" id="xcj-b5-s4j"/>
-                            </connections>
-                        </button>
-                        <view contentMode="scaleToFill" id="J9M-7i-erf">
-                            <rect key="frame" x="0.0" y="79" width="232" height="1"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LfB-4p-8vk">
-                            <rect key="frame" x="10" y="6" width="214" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="Thêm vào danh sách chờ">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnAddToQueue:" destination="-1" eventType="touchUpInside" id="kzz-7C-1vH"/>
                             </connections>
                         </button>
                     </subviews>

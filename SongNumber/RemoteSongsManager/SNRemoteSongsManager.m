@@ -17,7 +17,8 @@
     NSOutputStream *outputStream;
     
     BOOL isGetList;
-    BOOL isRequestedGetLis;
+    BOOL isRequestedGetList;
+    BOOL sentRemoteGetList;
     NSMutableData* mDataRead;
     
     // Read 4 bytes
@@ -56,13 +57,10 @@
             }
         }
     }
-    if (_requestListSongsCompleted) {
+    if(_requestListSongsCompleted){
         _requestListSongsCompleted();
     }
 }
-
-
-//////// socket /////////////
 
 - (void)initNetworkCommunicationToHost:(NSString*)host port:(UInt32)port {
     
@@ -97,11 +95,10 @@
 
 -(void)sendData:(NSData*)data
 {
+    NSLog(@"sendData");
     if (data && outputStream && [outputStream hasSpaceAvailable]) {
-        [outputStream write:[data bytes] maxLength:[data length]];
-    }else if(data && outputStream){
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendData:) object:nil];
-        [self performSelector:@selector(sendData:) withObject:data afterDelay:2];
+        NSUInteger byteswrote = [outputStream write:[data bytes] maxLength:[data length]];
+        NSLog(@"%lu",(unsigned long)byteswrote);
     }
 }
 
@@ -109,10 +106,8 @@
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
     switch (streamEvent) {
         case NSStreamEventOpenCompleted:
-            NSLog(@"Stream opened");
-            
-            if (!isRequestedGetLis) {
-                isRequestedGetLis = YES;
+            if (!isRequestedGetList) {
+                isRequestedGetList = YES;
                 if (_connectCompleted) {
                     _connectCompleted(YES, nil);
                 }
@@ -121,46 +116,39 @@
             
         case NSStreamEventHasBytesAvailable:
             if (theStream == inputStream) {
-                uint8_t buffer[1024];
-                NSInteger lengthRead = 0;
-                //check if still not got song list
                 if (!isGetList) {
-                    
                     @try {
-                        //check if not get first package for length file
                         if ([SNStreamUtil bufferFirstPackageIsNull:mBufferFirstPackage]) {
                             mDataRead = [[NSMutableData alloc]init];
                             NSMutableData* intByte = [SNStreamUtil readInt:inputStream];
                             [intByte getBytes:mBufferFirstPackage length:[intByte length]];
                             
-                            NSMutableData *numberIntBytes = [SNStreamUtil readInt:inputStream];
-                            uint8_t songNumberBytes[4];
-                            [numberIntBytes getBytes:songNumberBytes length:[numberIntBytes length]];
-                            if (numberIntBytes) {
-                                int numberSongs = [SNStreamUtil bufferFirstPackageToInt:songNumberBytes];
-                            }
+                            NSMutableData *amountSongData = [SNStreamUtil readInt:inputStream];
+                            uint8_t amountSongBytes[4];
+                            [amountSongData getBytes:amountSongBytes length:[amountSongData length]];
                         }
                         
                         //total length will be received
                         NSUInteger totalLength = [SNStreamUtil bufferFirstPackageToInt:mBufferFirstPackage];
                         
+                        uint8_t buffer[1024];
+                        NSInteger lengthRead = 0;
+                        
                         if (totalLength >0) {
                             NSUInteger currentReading =0;
                             while ([inputStream hasBytesAvailable]) {
-                                //check if tre remain data > size of the buffer
                                 if (mCurrentRead + sizeof(buffer) < totalLength) {
                                     currentReading = sizeof(buffer);
-                                }else{// if the remain data < size of the buffer
+                                }else{
                                     currentReading = totalLength - mCurrentRead;
                                 }
                                 
                                 lengthRead = [inputStream read:buffer maxLength:currentReading];
                                 if (lengthRead >0) {
                                     mCurrentRead += lengthRead;
-                                    
-                                    if (mCurrentRead < totalLength) {//if not full data
+                                    if (mCurrentRead < totalLength) { // It not full
                                         [mDataRead appendBytes:buffer length:lengthRead];
-                                    }else{//If read full data
+                                    } else { // Full
                                         NSString *receivedString = [[NSString alloc]initWithData:mDataRead encoding:NSUTF8StringEncoding];
                                         if (![NSString isStringEmpty:receivedString]) {
                                             [self performSelectorInBackground:@selector(parseListSongFromString:) withObject:receivedString];
@@ -171,19 +159,13 @@
                                         mDataRead = nil;
                                     }
                                 }
-                                
-                            }
-                        }
-                        
-                    }
+                            } // End while
+                        } // End if
+                    } // End try
                     @catch (NSException *exception) {
                         NSLog(@"Error: %@", [exception description]);
                     }
-                    @finally {
-                        
-                    }
                 }
-                
             }
             break;
             
@@ -194,12 +176,17 @@
             [theStream close];
             [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
             break;
-            
         case NSStreamEventEndEncountered:
             break;
-            
-        default:
-            NSLog(@"Unknown event");
+        case NSStreamEventHasSpaceAvailable:
+            if(self->sentRemoteGetList == NO)
+            {
+                self->sentRemoteGetList = YES;
+                [self performSelector:@selector(requestGetListSong) withObject:nil];
+            }
+            break;
+        case NSStreamEventNone:
+            break;
     }
     
 }

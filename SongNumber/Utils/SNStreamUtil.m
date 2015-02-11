@@ -21,7 +21,8 @@
 
 + (NSUInteger) bufferFirstPackageToInt:(UInt8*)bufferFirstPackage
 {
-    return (((int)bufferFirstPackage[0])<<24) + (((int)bufferFirstPackage[1])<<16) + (((int)bufferFirstPackage[2])<<8) + (((int)bufferFirstPackage[3]));
+    int result = (((int)bufferFirstPackage[0])<<24) + (((int)bufferFirstPackage[1])<<16) + (((int)bufferFirstPackage[2])<<8) + (((int)bufferFirstPackage[3]));
+    return result;
 }
 
 + (void) setBufferFirstPackageNull:(uint8_t*)bufferFirstPackage

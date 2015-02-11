@@ -32,7 +32,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        remoteSongManager = [SNRemoteSongsManager sharedInstance];
     }
     return self;
 }
@@ -40,21 +40,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    remoteSongManager = [SNRemoteSongsManager sharedInstance];
     __weak typeof(SNScanQRCodeViewController) *weakSelf = self;
-    __weak typeof(SNRemoteSongsManager) *weakRemoteSong = remoteSongManager;
     [remoteSongManager setRequestListSongsCompleted:^{
         [weakSelf hideLoading];
         SNSearchSongViewController *searchSongVC = [[SNSearchSongViewController alloc]initWithNibName:@"SNSearchSongViewController" bundle:nil];
         [weakSelf presentViewController:searchSongVC animated:YES completion:nil];
     }];
-    
     [remoteSongManager setConnectCompleted:^(BOOL success, NSError *error) {
-        if (success && !error) {
-            [weakRemoteSong performSelector:@selector(requestGetListSong) withObject:nil afterDelay:2];
+        if (success == YES) {
+            // Nothing
         }else{
             [weakSelf hideLoading];
-            [weakSelf showNotifyView:[NSString stringWithFormat:@"Lỗi kết nối: %@",error] complete:nil];
+            if(error != nil)
+            {
+                [weakSelf showNotifyView:[NSString stringWithFormat:@"Lỗi kết nối: %@",error] complete:nil];
+            }
         }
     }];
 }
@@ -62,8 +62,6 @@
 - (BOOL)startReading {
     NSError *error;
     
-    // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
-    // as the media type parameter.
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     // Get an instance of the AVCaptureDeviceInput class using the previous device object.
@@ -106,11 +104,9 @@
 
 
 -(void)stopReading{
-    // Stop video capture and make the capture session object nil.
     [_captureSession stopRunning];
     _captureSession = nil;
     
-    // Remove the video preview layer from the viewPreview view's layer.
     [_videoPreviewLayer removeFromSuperlayer];
     
     _txtIpAddress.text = scanValue;
@@ -121,34 +117,25 @@
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
-    
-    // Check if the metadataObjects array is not nil and it contains at least one object.
     if (metadataObjects != nil && [metadataObjects count] > 0) {
-        // Get the metadata object.
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-            // If the found metadata is equal to the QR code metadata then update the status label's text,
-            // stop reading and change the bar button item's title and the flag's value.
-            // Everything is done on the main thread.
             scanValue = [metadataObj stringValue];
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             
             _isReading = NO;
             
-            // If the audio player is not nil, then play the sound effect.
             if (_audioPlayer) {
                 [_audioPlayer play];
             }
         }
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)hideKeyboard

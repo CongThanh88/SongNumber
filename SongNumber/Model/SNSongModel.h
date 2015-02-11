@@ -60,7 +60,6 @@
 @property(nonatomic, assign)BOOL is_new;
 @property(nonatomic, assign)BOOL is_local;
 @property(nonatomic, assign)BOOL is_record;
-//Downloaded to local for offline
 @property(nonatomic, assign)BOOL isDownloaded;
 
 +(SNSongModel*)parseData:(NSDictionary*)dic;

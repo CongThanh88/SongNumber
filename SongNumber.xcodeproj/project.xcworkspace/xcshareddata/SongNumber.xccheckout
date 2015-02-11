@@ -8,26 +8,31 @@
 	<string>333054C7-7777-4462-9F01-0DEAB41A402A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SongNumber</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>43D4BC3F46FA52F913740440A1739CB20C8130E8</key>
+		<string>https://github.com/CongThanh88/SongNumber.git</string>
+	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SongNumber.xcodeproj/project.xcworkspace</string>
+	<string>SongNumber.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B2E633A4-8661-4CC8-A7FA-61A2F894D98B</key>
+		<key>43D4BC3F46FA52F913740440A1739CB20C8130E8</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://khoisang.com/svn/khoisang03/app/karaoke/source/IOS/SongNumber/SongNumber.xcodeproj</string>
+	<string>https://github.com/CongThanh88/SongNumber.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B2E633A4-8661-4CC8-A7FA-61A2F894D98B</string>
+	<string>43D4BC3F46FA52F913740440A1739CB20C8130E8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B2E633A4-8661-4CC8-A7FA-61A2F894D98B</string>
+			<string>43D4BC3F46FA52F913740440A1739CB20C8130E8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SongNumber</string>
 		</dict>

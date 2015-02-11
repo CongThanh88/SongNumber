@@ -27,8 +27,10 @@
 @property (weak, nonatomic) IBOutlet SNToggleButton *btnNew;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet SNToggleButton *btnStop;
-
-
+@property (weak, nonatomic) IBOutlet SNToggleButton *btnNext;
+@property (weak, nonatomic) IBOutlet SNToggleButton *btnPause;
+@property (weak, nonatomic) IBOutlet SNToggleButton *btnPlay;
+@property (weak, nonatomic) IBOutlet UIButton *btnSingerVoice;
 
 - (IBAction)btnDeleteText:(id)sender;
 - (IBAction)btnSort:(id)sender;
@@ -42,10 +44,7 @@
 - (IBAction)btnPause:(id)sender;
 - (IBAction)btnPlay:(id)sender;
 - (IBAction)btnNext:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnSingerVoice;
-
 - (IBAction)btnOnOffSingerVoice:(id)sender;
 
-@property (weak, nonatomic) IBOutlet SNToggleButton *btnNext;
 
 @end

@@ -44,11 +44,6 @@
 		A4D3743119C7EE490040A92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3743019C7EE490040A92F /* main.m */; };
 		A4D3743519C7EE490040A92F /* SNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3743419C7EE490040A92F /* SNAppDelegate.m */; };
 		A4D3743719C7EE490040A92F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D3743619C7EE490040A92F /* Images.xcassets */; };
-		A4D3743E19C7EE490040A92F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3743D19C7EE490040A92F /* XCTest.framework */; };
-		A4D3743F19C7EE490040A92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3742419C7EE490040A92F /* Foundation.framework */; };
-		A4D3744019C7EE490040A92F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3742819C7EE490040A92F /* UIKit.framework */; };
-		A4D3744819C7EE490040A92F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4D3744619C7EE490040A92F /* InfoPlist.strings */; };
-		A4D3744A19C7EE490040A92F /* SongNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3744919C7EE490040A92F /* SongNumberTests.m */; };
 		A4D3745A19C7EED80040A92F /* HTDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3745519C7EED80040A92F /* HTDatabaseHelper.m */; };
 		A4D3745B19C7EED80040A92F /* SNSearchSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3745819C7EED80040A92F /* SNSearchSongViewController.m */; };
 		A4D3745C19C7EED80040A92F /* SNSearchSongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D3745919C7EED80040A92F /* SNSearchSongViewController.xib */; };
@@ -79,16 +74,6 @@
 		A4D374AB19C81FE00040A92F /* header_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D374A919C81FE00040A92F /* header_logo@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A4D3744119C7EE490040A92F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4D3741919C7EE490040A92F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4D3742019C7EE490040A92F;
-			remoteInfo = SongNumber;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		1818E13B19E4BA8800B0D2E6 /* SNToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNToggleButton.h; sourceTree = "<group>"; };
 		1818E13C19E4BA8800B0D2E6 /* SNToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNToggleButton.m; sourceTree = "<group>"; };
@@ -111,7 +96,6 @@
 		18BFA1DA19C8741D00DC63B5 /* SettingValues.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingValues.plist; sourceTree = "<group>"; };
 		18BFA1DC19C8754A00DC63B5 /* TheLoaiBaiHat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TheLoaiBaiHat.plist; sourceTree = "<group>"; };
 		18BFA1DE19C875A500DC63B5 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		18BFA1DF19C875A500DC63B5 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29650A0F1A85B87A007FC356 /* ic_singer_voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_singer_voice@2x.png"; sourceTree = "<group>"; };
 		29650A101A85B87A007FC356 /* icon_stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_stop@2x.png"; sourceTree = "<group>"; };
 		29650A111A85B87A007FC356 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
@@ -139,11 +123,7 @@
 		A4D3743319C7EE490040A92F /* SNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNAppDelegate.h; sourceTree = "<group>"; };
 		A4D3743419C7EE490040A92F /* SNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNAppDelegate.m; sourceTree = "<group>"; };
 		A4D3743619C7EE490040A92F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A4D3743C19C7EE490040A92F /* SongNumberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SongNumberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D3743D19C7EE490040A92F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A4D3744519C7EE490040A92F /* SongNumberTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SongNumberTests-Info.plist"; sourceTree = "<group>"; };
-		A4D3744719C7EE490040A92F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A4D3744919C7EE490040A92F /* SongNumberTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongNumberTests.m; sourceTree = "<group>"; };
 		A4D3745419C7EED80040A92F /* HTDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDatabaseHelper.h; sourceTree = "<group>"; };
 		A4D3745519C7EED80040A92F /* HTDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDatabaseHelper.m; sourceTree = "<group>"; };
 		A4D3745719C7EED80040A92F /* SNSearchSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSearchSongViewController.h; sourceTree = "<group>"; };
@@ -204,16 +184,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4D3743919C7EE490040A92F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4D3743E19C7EE490040A92F /* XCTest.framework in Frameworks */,
-				A4D3744019C7EE490040A92F /* UIKit.framework in Frameworks */,
-				A4D3743F19C7EE490040A92F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -249,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				A4D3742A19C7EE490040A92F /* SongNumber */,
-				A4D3744319C7EE490040A92F /* SongNumberTests */,
 				A4D3742319C7EE490040A92F /* Frameworks */,
 				A4D3742219C7EE490040A92F /* Products */,
 			);
@@ -259,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				A4D3742119C7EE490040A92F /* iKaraoke list.app */,
-				A4D3743C19C7EE490040A92F /* SongNumberTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,24 +279,6 @@
 				A4D3742D19C7EE490040A92F /* InfoPlist.strings */,
 				A4D3743019C7EE490040A92F /* main.m */,
 				A4D3743219C7EE490040A92F /* SongNumber-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A4D3744319C7EE490040A92F /* SongNumberTests */ = {
-			isa = PBXGroup;
-			children = (
-				A4D3744919C7EE490040A92F /* SongNumberTests.m */,
-				A4D3744419C7EE490040A92F /* Supporting Files */,
-			);
-			path = SongNumberTests;
-			sourceTree = "<group>";
-		};
-		A4D3744419C7EE490040A92F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A4D3744519C7EE490040A92F /* SongNumberTests-Info.plist */,
-				A4D3744619C7EE490040A92F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -509,24 +459,6 @@
 			productReference = A4D3742119C7EE490040A92F /* iKaraoke list.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A4D3743B19C7EE490040A92F /* SongNumberTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4D3745019C7EE490040A92F /* Build configuration list for PBXNativeTarget "SongNumberTests" */;
-			buildPhases = (
-				A4D3743819C7EE490040A92F /* Sources */,
-				A4D3743919C7EE490040A92F /* Frameworks */,
-				A4D3743A19C7EE490040A92F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4D3744219C7EE490040A92F /* PBXTargetDependency */,
-			);
-			name = SongNumberTests;
-			productName = SongNumberTests;
-			productReference = A4D3743C19C7EE490040A92F /* SongNumberTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -539,9 +471,6 @@
 				TargetAttributes = {
 					A4D3742019C7EE490040A92F = {
 						DevelopmentTeam = CXRTNZ8FZR;
-					};
-					A4D3743B19C7EE490040A92F = {
-						TestTargetID = A4D3742019C7EE490040A92F;
 					};
 				};
 			};
@@ -559,7 +488,6 @@
 			projectRoot = "";
 			targets = (
 				A4D3742019C7EE490040A92F /* SongNumber */,
-				A4D3743B19C7EE490040A92F /* SongNumberTests */,
 			);
 		};
 /* End PBXProject section */
@@ -607,14 +535,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4D3743A19C7EE490040A92F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4D3744819C7EE490040A92F /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -651,23 +571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4D3743819C7EE490040A92F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4D3744A19C7EE490040A92F /* SongNumberTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A4D3744219C7EE490040A92F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4D3742019C7EE490040A92F /* SongNumber */;
-			targetProxy = A4D3744119C7EE490040A92F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A4D3742D19C7EE490040A92F /* InfoPlist.strings */ = {
@@ -675,15 +579,6 @@
 			children = (
 				18BFA1DE19C875A500DC63B5 /* vi */,
 				A4B70E0319C91E3F0022DD1D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A4D3744619C7EE490040A92F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4D3744719C7EE490040A92F /* en */,
-				18BFA1DF19C875A500DC63B5 /* vi */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -801,46 +696,6 @@
 			};
 			name = Release;
 		};
-		A4D3745119C7EE490040A92F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SongNumber.app/SongNumber";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SongNumber/SongNumber-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SongNumberTests/SongNumberTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		A4D3745219C7EE490040A92F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SongNumber.app/SongNumber";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SongNumber/SongNumber-Prefix.pch";
-				INFOPLIST_FILE = "SongNumberTests/SongNumberTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -858,15 +713,6 @@
 			buildConfigurations = (
 				A4D3744E19C7EE490040A92F /* Debug */,
 				A4D3744F19C7EE490040A92F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4D3745019C7EE490040A92F /* Build configuration list for PBXNativeTarget "SongNumberTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4D3745119C7EE490040A92F /* Debug */,
-				A4D3745219C7EE490040A92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
