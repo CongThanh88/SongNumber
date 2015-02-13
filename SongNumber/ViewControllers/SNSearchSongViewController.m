@@ -312,6 +312,8 @@
 
 - (IBAction)btnDeleteText:(id)sender {
     _txtSearchField.text = @"";
+    searchString = nil;
+    [self reloadSong];
 }
 
 - (IBAction)btnSort:(id)sender {
