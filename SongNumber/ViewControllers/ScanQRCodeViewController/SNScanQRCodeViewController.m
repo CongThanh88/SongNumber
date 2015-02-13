@@ -94,7 +94,6 @@
     [_videoPreviewLayer setFrame:_previewCapture.layer.bounds];
     [_previewCapture.layer addSublayer:_videoPreviewLayer];
     
-    
     // Start video capture.
     [_captureSession startRunning];
     
@@ -108,7 +107,11 @@
     
     [_videoPreviewLayer removeFromSuperlayer];
     
-    _txtIpAddress.text = scanValue;
+    //Auto connect to the ip after scan success
+    if (![NSString isStringEmpty:scanValue]) {
+        _txtIpAddress.text = scanValue;
+        [self connectToHost:scanValue];
+    }
 }
 
 
@@ -148,11 +151,18 @@
     [self startReading];
 }
 
-- (IBAction)btnConnect:(id)sender {
-    if (![NSString isStringEmpty:_txtIpAddress.text]) {
+-(void)connectToHost:(NSString*)ipAddress
+{
+    if (![NSString isStringEmpty:ipAddress]) {
         [self hideKeyboard];
         [self showLoading];
         [remoteSongManager initNetworkCommunicationToHost:_txtIpAddress.text port:PORT];
+    }
+}
+
+- (IBAction)btnConnect:(id)sender {
+    if (![NSString isStringEmpty:_txtIpAddress.text]) {
+        [self connectToHost:_txtIpAddress.text];
     }
 }
 @end
