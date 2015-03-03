@@ -90,15 +90,15 @@
     [self setupView];
     setting = [SNSettingManager sharedInstance];
     //regist keyboard notification
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
 }
 
 -(void)setupView
 {
     CGRect searchFrame = _txtSearchField.frame;
-    searchFrame.size.height = 26;
+    searchFrame.size.height = 28;
     _txtSearchField.frame = searchFrame;
     _txtSearchField.delegate = self;
     

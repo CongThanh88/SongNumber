@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Foundation/NSStream.h>
 
-#define PORT 2468
+#define PORT 6789
 
 typedef enum : unsigned char {
     REMOTE_PING = 0,

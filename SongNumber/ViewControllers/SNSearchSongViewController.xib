@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -44,37 +44,36 @@
                             <rect key="frame" x="116" y="4" width="197" height="28"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="WNn-50-hdA">
-                                    <rect key="frame" x="2" y="1" width="163" height="26"/>
+                                    <rect key="frame" x="2" y="0.0" width="163" height="28"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5f-ff-gCI">
-                                    <rect key="frame" x="169" y="2" width="24" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="Yvq-oR-X4l"/>
-                                        <constraint firstAttribute="width" constant="24" id="f6c-va-Wag"/>
-                                    </constraints>
-                                    <state key="normal" image="ic_delete_text.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="btnDeleteText:" destination="-1" eventType="touchUpInside" id="6d1-0G-5b5"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="centerY" secondItem="p5f-ff-gCI" secondAttribute="centerY" id="KUJ-dS-nxb"/>
-                                <constraint firstAttribute="trailing" secondItem="p5f-ff-gCI" secondAttribute="trailing" constant="4" id="YOC-QP-4ls"/>
-                            </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5f-ff-gCI">
+                            <rect key="frame" x="276" y="0.0" width="44" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="BWu-Tf-Che"/>
+                                <constraint firstAttribute="height" constant="36" id="G0v-8s-mKE"/>
+                            </constraints>
+                            <state key="normal" image="ic_delete_text.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnDeleteText:" destination="-1" eventType="touchUpInside" id="6d1-0G-5b5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.66863029230000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="p5f-ff-gCI" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="top" id="3sN-Zb-iQy"/>
+                        <constraint firstAttribute="trailing" secondItem="p5f-ff-gCI" secondAttribute="trailing" id="4Qu-UD-IeT"/>
                         <constraint firstItem="EyV-kN-BPc" firstAttribute="leading" secondItem="VE6-kp-NWj" secondAttribute="leading" constant="12" id="7IS-hr-o10"/>
                         <constraint firstItem="EyV-kN-BPc" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="top" constant="2" id="89I-Rn-1cq"/>
                         <constraint firstItem="Out-Iw-k2Q" firstAttribute="leading" secondItem="EyV-kN-BPc" secondAttribute="trailing" constant="26" id="GmZ-fu-5pp"/>
+                        <constraint firstAttribute="bottom" secondItem="p5f-ff-gCI" secondAttribute="bottom" id="Gqf-Iz-LWZ"/>
                         <constraint firstItem="Out-Iw-k2Q" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="top" constant="4" id="PX2-tm-gyd"/>
                         <constraint firstAttribute="trailing" secondItem="Out-Iw-k2Q" secondAttribute="trailing" constant="7" id="dqf-0o-YIP"/>
                         <constraint firstAttribute="height" constant="36" id="gRq-g4-YEu"/>
@@ -82,7 +81,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIq-8I-SE5">
-                    <rect key="frame" x="0.0" y="36" width="320" height="443"/>
+                    <rect key="frame" x="0.0" y="36" width="320" height="444"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SH-vhf">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
@@ -239,7 +238,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfP-t0-tDz">
-                            <rect key="frame" x="0.0" y="397" width="320" height="46"/>
+                            <rect key="frame" x="0.0" y="397" width="320" height="47"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckX-s0-Ku2" customClass="SNToggleButton">
                                     <rect key="frame" x="51" y="2" width="51" height="44"/>
@@ -271,8 +270,8 @@
                                         <action selector="btnPlay:" destination="-1" eventType="touchUpInside" id="d9m-Ul-pZg"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
-                                    <rect key="frame" x="154" y="1" width="52" height="47"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Ow-yYa" customClass="SNToggleButton">
+                                    <rect key="frame" x="154" y="1" width="52" height="46"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="52" id="BJc-Ww-mlR"/>
                                         <constraint firstAttribute="height" constant="46" id="HKL-aW-gKF"/>
@@ -325,7 +324,7 @@
                                 <constraint firstItem="TVI-U5-qh1" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="1" id="E5y-Lm-dPu"/>
                                 <constraint firstItem="ckX-s0-Ku2" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="2" id="Ilg-5i-Ayc"/>
                                 <constraint firstItem="5gr-Ow-yYa" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" constant="154" id="L2r-mA-JGs"/>
-                                <constraint firstAttribute="height" constant="46" id="MHK-hq-mVl"/>
+                                <constraint firstAttribute="height" constant="47" id="MHK-hq-mVl"/>
                                 <constraint firstItem="5gr-Ow-yYa" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" constant="1" id="m2w-S2-K1g"/>
                                 <constraint firstItem="Gtc-Gh-ihE" firstAttribute="top" secondItem="ZfP-t0-tDz" secondAttribute="top" id="oxx-7W-BdO"/>
                                 <constraint firstItem="ckX-s0-Ku2" firstAttribute="leading" secondItem="ZfP-t0-tDz" secondAttribute="leading" constant="51" id="rma-46-7Bd"/>
@@ -337,10 +336,10 @@
                         <constraint firstAttribute="trailing" secondItem="ZfP-t0-tDz" secondAttribute="trailing" id="3LN-Wc-Xqf"/>
                         <constraint firstAttribute="trailing" secondItem="x0v-SH-vhf" secondAttribute="trailing" id="4XQ-fL-DT5"/>
                         <constraint firstAttribute="trailing" secondItem="4fW-ny-Mho" secondAttribute="trailing" id="7LP-zY-gkM"/>
-                        <constraint firstAttribute="bottom" secondItem="x0v-SH-vhf" secondAttribute="bottom" constant="77" id="Bdr-fR-3Qf"/>
+                        <constraint firstAttribute="bottom" secondItem="x0v-SH-vhf" secondAttribute="bottom" constant="78" id="Bdr-fR-3Qf"/>
                         <constraint firstItem="x0v-SH-vhf" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="Gde-R1-UbE"/>
                         <constraint firstItem="ZfP-t0-tDz" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="JwQ-dS-7R2"/>
-                        <constraint firstAttribute="bottom" secondItem="4fW-ny-Mho" secondAttribute="bottom" constant="43" id="XtV-t2-3jU"/>
+                        <constraint firstAttribute="bottom" secondItem="4fW-ny-Mho" secondAttribute="bottom" constant="44" id="XtV-t2-3jU"/>
                         <constraint firstAttribute="bottom" secondItem="ZfP-t0-tDz" secondAttribute="bottom" id="eUo-Jm-mhn"/>
                         <constraint firstItem="x0v-SH-vhf" firstAttribute="top" secondItem="yIq-8I-SE5" secondAttribute="top" id="nRq-8W-a8r"/>
                         <constraint firstItem="4fW-ny-Mho" firstAttribute="leading" secondItem="yIq-8I-SE5" secondAttribute="leading" id="zo8-9h-QOL"/>
@@ -351,7 +350,7 @@
             <constraints>
                 <constraint firstItem="VE6-kp-NWj" firstAttribute="top" secondItem="SOI-9I-Cdv" secondAttribute="top" id="15d-sO-pms"/>
                 <constraint firstItem="yIq-8I-SE5" firstAttribute="leading" secondItem="SOI-9I-Cdv" secondAttribute="leading" id="1qv-MR-fn8"/>
-                <constraint firstAttribute="bottom" secondItem="yIq-8I-SE5" secondAttribute="bottom" constant="1" id="Aip-gS-J7v"/>
+                <constraint firstAttribute="bottom" secondItem="yIq-8I-SE5" secondAttribute="bottom" id="Aip-gS-J7v"/>
                 <constraint firstAttribute="trailing" secondItem="VE6-kp-NWj" secondAttribute="trailing" id="BwP-UH-mts"/>
                 <constraint firstItem="yIq-8I-SE5" firstAttribute="top" secondItem="VE6-kp-NWj" secondAttribute="bottom" id="gP3-2t-Ybd"/>
                 <constraint firstItem="VE6-kp-NWj" firstAttribute="leading" secondItem="SOI-9I-Cdv" secondAttribute="leading" id="ixY-H5-nlD"/>
