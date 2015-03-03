@@ -114,7 +114,7 @@
 		A40648C31A80ABF7005C8A84 /* SNScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SNScanQRCodeViewController.xib; path = ScanQRCodeViewController/SNScanQRCodeViewController.xib; sourceTree = "<group>"; };
 		A4B70E0319C91E3F0022DD1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4B70E0419C91F460022DD1D /* SongNumber-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SongNumber-Info.plist"; sourceTree = "<group>"; };
-		A4D3742119C7EE490040A92F /* iKaraoke list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iKaraoke list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D3742119C7EE490040A92F /* VITEK REMOTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VITEK REMOTE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D3742419C7EE490040A92F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4D3742619C7EE490040A92F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A4D3742819C7EE490040A92F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -227,7 +227,7 @@
 		A4D3742219C7EE490040A92F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4D3742119C7EE490040A92F /* iKaraoke list.app */,
+				A4D3742119C7EE490040A92F /* VITEK REMOTE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 			);
 			name = SongNumber;
 			productName = SongNumber;
-			productReference = A4D3742119C7EE490040A92F /* iKaraoke list.app */;
+			productReference = A4D3742119C7EE490040A92F /* VITEK REMOTE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -674,8 +674,8 @@
 				GCC_PREFIX_HEADER = "SongNumber/SongNumber-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SongNumber/SongNumber-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "iKaraoke list";
-				PROVISIONING_PROFILE = "5bf66e9f-1bf5-4295-bb4a-9e4a50c8fb3f";
+				PRODUCT_NAME = "VITEK REMOTE";
+				PROVISIONING_PROFILE = "fefbcc03-9162-488d-be64-83e84beef848";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -684,14 +684,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: abc xyz (56XKYX4NM4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: do tam (CXRTNZ8FZR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SongNumber/SongNumber-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SongNumber/SongNumber-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "iKaraoke list";
-				PROVISIONING_PROFILE = "5bf66e9f-1bf5-4295-bb4a-9e4a50c8fb3f";
+				PRODUCT_NAME = "VITEK REMOTE";
+				PROVISIONING_PROFILE = "86a2d4f7-26e6-4d40-892a-926a5af8e4b8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

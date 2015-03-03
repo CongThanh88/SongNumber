@@ -36,3 +36,11 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define Debug 0
+
+#if(defined(Debug) && Debug == 1)
+#define DebugLog(stringFormat,...) NSLog(stringFormat, ##__VA_ARGS__)
+#else
+#define DebugLog(stringFormat,...) do{}while(0)
+#endif

@@ -72,16 +72,26 @@
     [inputStream setDelegate:self];
     [outputStream setDelegate:self];
     [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [inputStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType] ;
+    [outputStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType] ;
     [inputStream open];
     [outputStream open];
+    
+    [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:^(){
+        [self performSelectorOnMainThread:@selector(autoPing) withObject:nil waitUntilDone:YES];
+        DebugLog(@"KeepAliveTimeOut");
+    }];
+}
+
+-(void)autoPing
+{
+    [self sendRemoteControl:REMOTE_PING andValue:-1];
 }
 
 -(void)requestGetListSong
 {
     [self sendRemoteControl:REMOTE_SONG_LIST andValue:-1];
 }
-
 
 -(void)sendRemoteControl:(REMOTE)remote andValue:(int)value
 {
@@ -90,13 +100,14 @@
         uint32_t tempValue = CFSwapInt32HostToBig(value);
         [remoteData appendData:[NSData dataWithBytes:(&tempValue) length:sizeof(uint32_t)]];
     }
-    [self performSelectorInBackground:@selector(sendData:) withObject:remoteData];
+    [self sendData:remoteData];
 }
 
 -(void)sendData:(NSData*)data
 {
     if (data && outputStream && [outputStream hasSpaceAvailable]) {
         NSUInteger byteswrote = [outputStream write:[data bytes] maxLength:[data length]];
+        DebugLog(@"%lu",(unsigned long)byteswrote);
     }
 }
 
@@ -114,6 +125,7 @@
             
         case NSStreamEventHasBytesAvailable:
             if (theStream == inputStream) {
+                uint8_t buffer[1024];
                 if (!isGetList) {
                     @try {
                         if ([SNStreamUtil bufferFirstPackageIsNull:mBufferFirstPackage]) {
@@ -128,8 +140,6 @@
                         
                         //total length will be received
                         NSUInteger totalLength = [SNStreamUtil bufferFirstPackageToInt:mBufferFirstPackage];
-                        
-                        uint8_t buffer[1024];
                         NSInteger lengthRead = 0;
                         
                         if (totalLength >0) {
@@ -161,7 +171,7 @@
                         } // End if
                     } // End try
                     @catch (NSException *exception) {
-                        NSLog(@"Error: %@", [exception description]);
+                        DebugLog(@"Error: %@", [exception description]);
                     }
                 }
             }
@@ -180,7 +190,9 @@
             if(self->sentRemoteGetList == NO)
             {
                 self->sentRemoteGetList = YES;
-                [self performSelector:@selector(requestGetListSong) withObject:nil];
+                [self requestGetListSong];
+            }
+            else{
             }
             break;
         case NSStreamEventNone:

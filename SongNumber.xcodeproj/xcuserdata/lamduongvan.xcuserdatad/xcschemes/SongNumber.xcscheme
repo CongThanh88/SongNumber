@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4D3742019C7EE490040A92F"
-               BuildableName = "iKaraoke list.app"
+               BuildableName = "VITEK REMOTE.app"
                BlueprintName = "SongNumber"
                ReferencedContainer = "container:SongNumber.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4D3742019C7EE490040A92F"
-            BuildableName = "iKaraoke list.app"
+            BuildableName = "VITEK REMOTE.app"
             BlueprintName = "SongNumber"
             ReferencedContainer = "container:SongNumber.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4D3742019C7EE490040A92F"
-            BuildableName = "iKaraoke list.app"
+            BuildableName = "VITEK REMOTE.app"
             BlueprintName = "SongNumber"
             ReferencedContainer = "container:SongNumber.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4D3742019C7EE490040A92F"
-            BuildableName = "iKaraoke list.app"
+            BuildableName = "VITEK REMOTE.app"
             BlueprintName = "SongNumber"
             ReferencedContainer = "container:SongNumber.xcodeproj">
          </BuildableReference>
