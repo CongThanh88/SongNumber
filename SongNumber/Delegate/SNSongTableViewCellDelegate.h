@@ -12,4 +12,5 @@
 @protocol SNSongTableViewCellDelegate <NSObject>
 -(void)addToFavorite:(SNSongModel*)song;
 -(void)viewLyricSong:(SNSongModel*)song;
+-(void)addToQueue:(SNSongModel*)song;
 @end

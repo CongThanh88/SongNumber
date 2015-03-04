@@ -58,8 +58,8 @@
     CGRect notifyFrame = _notifyView.frame;
     CGSize fixedSize = [content sizeWithFont:_notifyView.font];
     notifyFrame.size = CGSizeMake(fixedSize.width +20, fixedSize.height + 10);
-    float x_center = ([UIScreen mainScreen].bounds.size.height - notifyFrame.size.width)/2;
-    float y_center = ([UIScreen mainScreen].bounds.size.width - notifyFrame.size.height)/2;
+    float x_center = ([UIScreen mainScreen].bounds.size.width - notifyFrame.size.width)/2;
+    float y_center = ([UIScreen mainScreen].bounds.size.height - notifyFrame.size.height)/2;
     notifyFrame.origin.x = x_center;
     notifyFrame.origin.y = y_center;
     _notifyView.frame = notifyFrame;

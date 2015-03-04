@@ -22,6 +22,9 @@
 {
     if (IS_IPAD) {
         // Initialization code
+        UITapGestureRecognizer *cellTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addSongToQueue)];
+        [self addGestureRecognizer:cellTapGesture];
+        
         if (!btnAddToFavorite) {
             btnAddToFavorite = [[UIButton alloc]initWithFrame:CGRectMake(530, 46, 186, 28)];
             btnAddToFavorite.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -119,12 +122,19 @@
 }
 
 - (void)addToFavorite:(id)sender {
-    _songModel.is_favorite = !_songModel.is_favorite;
-    if (_songModel && _delegate && [_delegate respondsToSelector:@selector(addToFavorite:)]) {
-        [_delegate addToFavorite:_songModel];
-    }
     if (_songModel) {
+        _songModel.is_favorite = !_songModel.is_favorite;
+        if (_delegate && [_delegate respondsToSelector:@selector(addToFavorite:)]) {
+            [_delegate addToFavorite:_songModel];
+        }
         [self updateFavoriteIcon];
+    }
+}
+
+-(void)addSongToQueue
+{
+    if (_songModel && _delegate && [_delegate respondsToSelector:@selector(addToQueue:)]) {
+        [_delegate addToQueue:_songModel];
     }
 }
 @end

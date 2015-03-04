@@ -455,6 +455,8 @@
 {
     if (song) {
         [remoteSongManager sendRemoteControl:REMOTE_RES andValue:[song.number intValue]];
+        NSString *registeredString = [NSString stringWithFormat:@"Đã chọn %d - %@",[song.number intValue], song.title];
+        [self showNotifyView:registeredString complete:nil];
     }
 }
 
