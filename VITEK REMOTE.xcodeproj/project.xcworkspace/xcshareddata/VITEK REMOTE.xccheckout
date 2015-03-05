@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>75C76C2D-9A2C-438A-9968-666A3192A61A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VITEK REMOTE</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>43D4BC3F46FA52F913740440A1739CB20C8130E8</key>
+		<string>https://github.com/CongThanh88/SongNumber.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VITEK REMOTE.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>43D4BC3F46FA52F913740440A1739CB20C8130E8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CongThanh88/SongNumber.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>43D4BC3F46FA52F913740440A1739CB20C8130E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>43D4BC3F46FA52F913740440A1739CB20C8130E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SongNumber</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4D3742019C7EE490040A92F"
                BuildableName = "VITEK REMOTE.app"
-               BlueprintName = "SongNumber"
-               ReferencedContainer = "container:SongNumber.xcodeproj">
+               BlueprintName = "VITEK REMOTE"
+               ReferencedContainer = "container:VITEK REMOTE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "A4D3743B19C7EE490040A92F"
                BuildableName = "SongNumberTests.xctest"
                BlueprintName = "SongNumberTests"
-               ReferencedContainer = "container:SongNumber.xcodeproj">
+               ReferencedContainer = "container:VITEK REMOTE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "A4D3743B19C7EE490040A92F"
                BuildableName = "SongNumberTests.xctest"
                BlueprintName = "SongNumberTests"
-               ReferencedContainer = "container:SongNumber.xcodeproj">
+               ReferencedContainer = "container:VITEK REMOTE.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4D3742019C7EE490040A92F"
             BuildableName = "VITEK REMOTE.app"
-            BlueprintName = "SongNumber"
-            ReferencedContainer = "container:SongNumber.xcodeproj">
+            BlueprintName = "VITEK REMOTE"
+            ReferencedContainer = "container:VITEK REMOTE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4D3742019C7EE490040A92F"
             BuildableName = "VITEK REMOTE.app"
-            BlueprintName = "SongNumber"
-            ReferencedContainer = "container:SongNumber.xcodeproj">
+            BlueprintName = "VITEK REMOTE"
+            ReferencedContainer = "container:VITEK REMOTE.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,8 +95,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4D3742019C7EE490040A92F"
             BuildableName = "VITEK REMOTE.app"
-            BlueprintName = "SongNumber"
-            ReferencedContainer = "container:SongNumber.xcodeproj">
+            BlueprintName = "VITEK REMOTE"
+            ReferencedContainer = "container:VITEK REMOTE.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
