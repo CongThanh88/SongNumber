@@ -44,7 +44,6 @@
 		A4D3743119C7EE490040A92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3743019C7EE490040A92F /* main.m */; };
 		A4D3743519C7EE490040A92F /* SNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3743419C7EE490040A92F /* SNAppDelegate.m */; };
 		A4D3743719C7EE490040A92F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D3743619C7EE490040A92F /* Images.xcassets */; };
-		A4D3745A19C7EED80040A92F /* HTDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3745519C7EED80040A92F /* HTDatabaseHelper.m */; };
 		A4D3745B19C7EED80040A92F /* SNSearchSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3745819C7EED80040A92F /* SNSearchSongViewController.m */; };
 		A4D3745C19C7EED80040A92F /* SNSearchSongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D3745919C7EED80040A92F /* SNSearchSongViewController.xib */; };
 		A4D3746119C7EF6C0040A92F /* SNSongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3745F19C7EF6C0040A92F /* SNSongTableViewCell.m */; };
@@ -69,7 +68,6 @@
 		A4D374A219C7FBA40040A92F /* ic_midi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D3749D19C7FBA40040A92F /* ic_midi@2x.png */; };
 		A4D374A319C7FBA40040A92F /* ic_mp3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D3749E19C7FBA40040A92F /* ic_mp3@2x.png */; };
 		A4D374A419C7FBA40040A92F /* ic_mtv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D3749F19C7FBA40040A92F /* ic_mtv@2x.png */; };
-		A4D374A719C80BBF0040A92F /* vitek.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A4D374A619C80BBF0040A92F /* vitek.sqlite */; };
 		A4D374AA19C81FE00040A92F /* a1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D374A819C81FE00040A92F /* a1.png */; };
 		A4D374AB19C81FE00040A92F /* header_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D374A919C81FE00040A92F /* header_logo@2x.png */; };
 /* End PBXBuildFile section */
@@ -124,8 +122,6 @@
 		A4D3743419C7EE490040A92F /* SNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNAppDelegate.m; sourceTree = "<group>"; };
 		A4D3743619C7EE490040A92F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4D3743D19C7EE490040A92F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A4D3745419C7EED80040A92F /* HTDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDatabaseHelper.h; sourceTree = "<group>"; };
-		A4D3745519C7EED80040A92F /* HTDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDatabaseHelper.m; sourceTree = "<group>"; };
 		A4D3745719C7EED80040A92F /* SNSearchSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSearchSongViewController.h; sourceTree = "<group>"; };
 		A4D3745819C7EED80040A92F /* SNSearchSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSearchSongViewController.m; sourceTree = "<group>"; };
 		A4D3745919C7EED80040A92F /* SNSearchSongViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNSearchSongViewController.xib; sourceTree = "<group>"; };
@@ -167,7 +163,6 @@
 		A4D3749D19C7FBA40040A92F /* ic_midi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_midi@2x.png"; sourceTree = "<group>"; };
 		A4D3749E19C7FBA40040A92F /* ic_mp3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mp3@2x.png"; sourceTree = "<group>"; };
 		A4D3749F19C7FBA40040A92F /* ic_mtv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mtv@2x.png"; sourceTree = "<group>"; };
-		A4D374A619C80BBF0040A92F /* vitek.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = vitek.sqlite; sourceTree = "<group>"; };
 		A4D374A819C81FE00040A92F /* a1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a1.png; sourceTree = "<group>"; };
 		A4D374A919C81FE00040A92F /* header_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_logo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,7 +253,6 @@
 				A4D3746819C7F0E40040A92F /* Delegate */,
 				A4D3746319C7F04F0040A92F /* Model */,
 				A4D3745D19C7EF6C0040A92F /* CustomViews */,
-				A4D3745319C7EED80040A92F /* DataManager */,
 				A4D3745619C7EED80040A92F /* ViewControllers */,
 				A4D3743319C7EE490040A92F /* SNAppDelegate.h */,
 				A4D3743419C7EE490040A92F /* SNAppDelegate.m */,
@@ -274,22 +268,12 @@
 				A4B70E0419C91F460022DD1D /* VITEK REMOTE-Info.plist */,
 				18BFA1DC19C8754A00DC63B5 /* TheLoaiBaiHat.plist */,
 				18BFA1DA19C8741D00DC63B5 /* SettingValues.plist */,
-				A4D374A619C80BBF0040A92F /* vitek.sqlite */,
 				A4D3749B19C7FBA40040A92F /* Resource */,
 				A4D3742D19C7EE490040A92F /* InfoPlist.strings */,
 				A4D3743019C7EE490040A92F /* main.m */,
 				A4D3743219C7EE490040A92F /* VITEK REMOTE-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A4D3745319C7EED80040A92F /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				A4D3745419C7EED80040A92F /* HTDatabaseHelper.h */,
-				A4D3745519C7EED80040A92F /* HTDatabaseHelper.m */,
-			);
-			path = DataManager;
 			sourceTree = "<group>";
 		};
 		A4D3745619C7EED80040A92F /* ViewControllers */ = {
@@ -528,7 +512,6 @@
 				1826283D19E43265003DDE4E /* ic_filter_language@2x.png in Resources */,
 				29650A151A85B87A007FC356 /* icon_stop@2x.png in Resources */,
 				A40648C51A80ABF7005C8A84 /* SNScanQRCodeViewController.xib in Resources */,
-				A4D374A719C80BBF0040A92F /* vitek.sqlite in Resources */,
 				A4D374AB19C81FE00040A92F /* header_logo@2x.png in Resources */,
 				A4D374A219C7FBA40040A92F /* ic_midi@2x.png in Resources */,
 				29650A161A85B87A007FC356 /* next@2x.png in Resources */,
@@ -546,7 +529,6 @@
 				A4D3746619C7F04F0040A92F /* SNSongModel.m in Sources */,
 				A4D3747219C7F1E70040A92F /* BorderRoundButton.m in Sources */,
 				A4D3747E19C7F54E0040A92F /* SNSettingManager.m in Sources */,
-				A4D3745A19C7EED80040A92F /* HTDatabaseHelper.m in Sources */,
 				183CD47219E58AD20036DD85 /* KSBasePopupView.m in Sources */,
 				299768091A83B5B2002920F6 /* SNStreamUtil.m in Sources */,
 				A4D3743119C7EE490040A92F /* main.m in Sources */,

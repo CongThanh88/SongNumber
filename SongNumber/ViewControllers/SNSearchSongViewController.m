@@ -8,7 +8,6 @@
 
 #import "SNSearchSongViewController.h"
 #import "NSString+Addition.h"
-#import "HTDatabaseHelper.h"
 #import "SNSongTableViewCell.h"
 #import "HTLocalizeHelper.h"
 #import "SNSettingManager.h"
